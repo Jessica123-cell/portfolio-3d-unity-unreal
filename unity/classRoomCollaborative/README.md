@@ -41,3 +41,7 @@ The global architecture is organized around four main functional modules:
 
 ## Project Context
 This project explores the use of collaborative VR environments as tools for learning and interaction, combining real-time 3D, networking, and immersive user experience design.
+
+Presentation Video
+The video is stored via Git LFS. To download it, visit the repository and click on: "unity/classRoomCollaborative/video.mp4" → Download.
+
