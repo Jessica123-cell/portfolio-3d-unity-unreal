@@ -148,6 +148,10 @@ Dataset split:
 A short demonstration video is included to showcase:
 1. Firearm detection on static images  
 2. Real-time detection on IP camera RTSP streams  
-3. Node-RED automation pipeline  
+3. Node-RED automation pipeline
+
+Presentation Video
+The video is stored via Git LFS. To download it, visit the repository and click on: "unity/classRoomCollaborative/video.mp4" → Download. 
+
 
 
