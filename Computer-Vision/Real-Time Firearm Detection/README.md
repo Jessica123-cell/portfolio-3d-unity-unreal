@@ -151,7 +151,8 @@ A short demonstration video is included to showcase:
 3. Node-RED automation pipeline
 
 Presentation Video
-The video is stored via Git LFS. To download it, visit the repository and click on: "unity/classRoomCollaborative/video.mp4" → Download. 
+The video is stored via Git LFS. To download it, visit the repository and click on: "Computer-Vision/Real-Time Firearm Detection/Firearm video.mp4" → Download. 
+
 
 
 
