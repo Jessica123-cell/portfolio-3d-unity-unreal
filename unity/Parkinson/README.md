@@ -42,7 +42,7 @@ An article about our project was published in the Arts et Métiers internal news
 
 ## Presentation Video
 The video is stored via Git LFS. To download it, visit the repository and click on:
-"unity/Parkinson/video_compressed.mp4" → Download.
+"unity/Parkinson/video_compressed.mp4" → Download ( https://github.com/Jessica123-cell/portfolio-3d-unity-unreal/blob/main/unity/Parkinson/video_compressed.mp4 ).
 
 Music used in the presentation video: Free audio from Canva
 License: Free for personal and commercial use
