@@ -1,5 +1,8 @@
 #  Real-Time Firearm Detection using Computer Vision, Video Surveillance and Augmented Reality
 
+
+![Firearmvideo](https://github.com/user-attachments/assets/a9bb88f1-9ebc-43c5-b7bf-e835ead76619)
+
 ##  Project Overview
 
 This project focuses on **automatic firearm detection** using computer vision and deep learning.  
@@ -158,6 +161,7 @@ The video is stored via Git LFS. To download it, visit the repository and click 
 This project was completed in a pair.  
 - OUEDRAOGO Jessica https://www.linkedin.com/in/jessica-ouedraogo-2485332b0/?originalSubdomain=fr   
 - TAMINI Abel https://www.linkedin.com/in/abel-tamini-314366244/
+
 
 
 
