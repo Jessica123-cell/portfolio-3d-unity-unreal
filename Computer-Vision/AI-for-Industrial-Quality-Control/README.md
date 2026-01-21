@@ -5,7 +5,7 @@ This project presents a **computer vision–based quality control system** desig
 
 The solution addresses inefficiencies observed in traditional end-of-line quality inspection by introducing **camera-based inspection at the end of each assembly station**, enabling early and progressive defect detection.
 
-
+![Industrial_Quality_Control_video](https://github.com/JessicaOUEDRAOGO/Portfolio/blob/main/Computer-Vision/AI-for-Industrial-Quality-Control/AI.gif)
 
 ---
 
@@ -141,5 +141,6 @@ This repository includes:
 
 This project is presented as a **technical portfolio project**, focused on industrial computer vision and multi-station quality control.  
 The methodology can be extended to other sequential manufacturing and assembly systems.
+
 
 
