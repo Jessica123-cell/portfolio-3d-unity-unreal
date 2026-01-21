@@ -3,28 +3,81 @@
 
 ![Firearmvideo](https://github.com/user-attachments/assets/a9bb88f1-9ebc-43c5-b7bf-e835ead76619)
 
-##  Project Overview
+## Project Overview
 
-This project focuses on **automatic firearm detection** using computer vision and deep learning.  
-It combines **real-time object detection**, **IP camera video surveillance**, and **augmented reality** to address two strategic use cases:
+This project presents a **computer vision–based firearm detection system** developed for **training and security applications**, combining **deep learning, augmented reality, and intelligent video surveillance**.
 
--  **Immersive military training** using augmented reality
--  **Security-oriented monitoring** through intelligent video surveillance systems
+The initial objective was to support **cadets of the Royal Military Academy (Morocco)** in learning to **safely recognize, assemble, and disassemble firearms** using an immersive augmented reality training environment.
 
-Two detection models were developed and evaluated:
-- A **YOLOv8 model trained locally**
-- A **multi-class detection model trained and deployed on Roboflow**
+In the training scenario:
+- The student wears a **mixed-reality headset (Meta Quest 3)** equipped with a camera  
+- The system detects the firearm held by the user in real time  
+- The detected weapon name is displayed  
+- An instructional video demonstrating the **assembly and disassembly procedure** of the recognized weapon is automatically projected  
+
+The project was later extended to a **security-oriented application** by integrating **IP camera streams** in order to perform **automatic firearm detection in surveillance environments**.
+
+This dual-use design addresses both:
+- **Immersive military training**
+- **Intelligent video surveillance for security purposes**
 
 ---
 
-##  Project Objectives
+## Use Cases
 
-- Detect firearms automatically in images and video streams
-- Classify specific weapon types
+### 1. Immersive Military Training (Augmented Reality)
+
+- Real-time firearm recognition using the headset camera  
+- Automatic identification of weapon type  
+- Display of contextual training content:
+  - Weapon name  
+  - Video demonstrating safe assembly and disassembly procedures  
+- Objective:  
+  - Improve learning efficiency  
+  - Enhance safety during weapon handling training  
+
+### 2. Intelligent Video Surveillance (Security Extension)
+
+- Firearm detection in **real-time IP camera streams**  
+- Automatic analysis of surveillance footage  
+- Intended for:
+  - Security monitoring  
+  - Threat awareness  
+  - Future alert and automation systems  
+
+---
+
+## Detection Models
+
+Two detection approaches were developed and evaluated:
+
+### YOLOv8 Model (Local Training)
+
+- Single-class firearm detection  
+- Focused on: `Glock 19`  
+- Trained locally using Ultralytics YOLOv8  
+
+### Roboflow Multi-Class Model
+
+- Multi-weapon detection  
+- Trained and deployed on Roboflow cloud platform  
+- Selected for deployment due to:
+  - Higher class diversity  
+  - Easier integration with Node-RED and IP camera pipelines  
+
+---
+
+## Project Objectives
+
+- Automatically detect firearms in images and video streams  
+- Recognize and classify specific weapon types  
 - Deploy detection in:
-  - real-time **IP camera surveillance systems**
-  - an **augmented reality training application**
-- Provide a scalable technical foundation for security and training applications
+  - Augmented reality training systems  
+  - Real-time IP camera surveillance  
+- Provide a scalable technical foundation for:
+  - Military training  
+  - Security monitoring  
+  - Future automation and alert systems  
 
 ---
 
@@ -161,6 +214,7 @@ The video is stored via Git LFS. To download it, visit the repository and click 
 This project was completed in a pair.  
 - OUEDRAOGO Jessica https://www.linkedin.com/in/jessica-ouedraogo-2485332b0/?originalSubdomain=fr   
 - TAMINI Abel https://www.linkedin.com/in/abel-tamini-314366244/
+
 
 
 
