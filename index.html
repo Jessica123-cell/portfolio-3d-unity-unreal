@@ -480,6 +480,75 @@
     line-height: 1.55;
   }
 
+  /* EDU CARDS */
+  .edu-card { display: flex; flex-direction: column; gap: 0.75rem; }
+
+  .edu-header {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+  }
+
+  .edu-logo {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    padding: 4px;
+    background: white;
+    flex-shrink: 0;
+  }
+
+  .edu-badge {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--tag-text);
+    background: var(--tag-bg);
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+    margin-bottom: 0.3rem;
+  }
+
+  .edu-header h3 { margin-bottom: 0; font-size: 0.95rem; }
+
+  /* SKILLS TAGS */
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.6rem;
+  }
+
+  .skill-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.75rem 0.3rem 0.5rem;
+    border-radius: 100px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    border: 1px solid rgba(59,94,166,0.15);
+  }
+
+  .skill-icon {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+  }
+
+  .skill-tag-dark { background: #1C1C1A; color: #fff; border-color: transparent; }
+  .skill-tag-dark .skill-icon { color: #fff; }
+  .skill-tag-purple { background: #EEE8F8; color: #5B3FA8; border-color: rgba(91,63,168,0.2); }
+  .skill-tag-teal   { background: #E2F5EF; color: #0F6E56; border-color: rgba(15,110,86,0.2); }
+  .skill-tag-orange { background: #FEF0E3; color: #A0511A; border-color: rgba(160,81,26,0.2); }
+  .skill-tag-red    { background: #FDEAEA; color: #991F1F; border-color: rgba(153,31,31,0.2); }
+
   /* FOOTER */
   footer {
     border-top: 1px solid var(--border);
@@ -560,42 +629,74 @@
   <p class="section-label">Background</p>
   <h2 class="section-title">About</h2>
   <div class="about-grid">
-    <div class="about-card">
-      <div class="about-card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
-        </svg>
+
+    <div class="about-card edu-card">
+      <div class="edu-header">
+        <img src="https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/About_Education/ENSAM.jpg" alt="ENSAM Chalon logo" class="edu-logo" onerror="this.style.display='none'">
+        <div>
+          <span class="edu-badge">Master's M2 · In progress</span>
+          <h3>Digital Engineering</h3>
+        </div>
       </div>
-      <h3>Master's — Digital Engineering</h3>
-      <p>Arts et Métiers (ENSAM), Chalon-sur-Saône. Focus on interactive 3D technologies, XR, and immersive system design.</p>
+      <p>Arts et Métiers (ENSAM), Chalon-sur-Saône. Interactive 3D technologies, XR, and immersive system design.</p>
     </div>
-    <div class="about-card">
-      <div class="about-card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="3"/><path d="M19.07 4.93A10 10 0 1 0 4.93 19.07M12 2v2M12 20v2M2 12h2M20 12h2"/>
-        </svg>
+
+    <div class="about-card edu-card">
+      <div class="edu-header">
+        <img src="https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/About_Education/logo_ensam.jpg" alt="ENSAM Meknes logo" class="edu-logo" onerror="this.style.display='none'">
+        <div>
+          <span class="edu-badge">State Engineering Degree</span>
+          <h3>Electromechanical Engineering</h3>
+        </div>
       </div>
-      <h3>State Engineering Degree</h3>
-      <p>Electromechanical Engineering — control systems &amp; industrial management. ENSAM Meknes, Morocco.</p>
+      <p>Control systems &amp; industrial management. ENSAM Meknes, Morocco.</p>
     </div>
+
     <div class="about-card">
       <div class="about-card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
           <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
         </svg>
       </div>
       <h3>Core skills</h3>
-      <p>Unity · Unreal Engine · Computer Vision · Python · ArUco / OpenCV · Real-time AI systems · AR/VR interaction design.</p>
+      <div class="skills-grid">
+        <span class="skill-tag">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" class="skill-icon" alt="">Unity
+        </span>
+        <span class="skill-tag skill-tag-dark">
+          <svg class="skill-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M1.608 13.104l4.73 8.19a1.73 1.73 0 003.002 0l1.247-2.159-2.37-4.104a2.073 2.073 0 010-2.062L9.464 11H6.85l-5.242.001a1.73 1.73 0 000 1.502v.601zm10.784-1.042l-2.37 4.104 2.37 4.104a1.73 1.73 0 003.002 0l4.73-8.19v-.6a1.73 1.73 0 000-1.502l-5.242-.001h-2.49zm9.846-1.986l-4.73-8.19a1.73 1.73 0 00-3.002 0L13.26 4.044l2.37 4.104a2.073 2.073 0 010 2.062l1.247 1.79h2.613l5.242-.001a1.73 1.73 0 000-1.923zm-12.892-2.04L7.346 12l2 3.964 2-3.964-2-3.964zm0 0"/></svg>Unreal Engine
+        </span>
+        <span class="skill-tag">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="skill-icon" alt="">Python
+        </span>
+        <span class="skill-tag">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" class="skill-icon" alt="">OpenCV
+        </span>
+        <span class="skill-tag skill-tag-purple">
+          <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h3M19 12h3M12 2v3M12 19v3"/><rect x="7" y="7" width="10" height="10" rx="2"/><circle cx="12" cy="12" r="2"/></svg>Computer Vision
+        </span>
+        <span class="skill-tag skill-tag-teal">
+          <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>AR / VR
+        </span>
+        <span class="skill-tag skill-tag-orange">
+          <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>ArUco / Markers
+        </span>
+        <span class="skill-tag skill-tag-red">
+          <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-4M9 21H5a2 2 0 01-2-2v-4m0 0h18"/></svg>Real-time AI
+        </span>
+      </div>
     </div>
+
     <div class="about-card">
       <div class="about-card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
         </svg>
       </div>
       <h3>Location</h3>
       <p>Based in France. Open to international opportunities in XR, industrial AI, and immersive simulation.</p>
     </div>
+
   </div>
 </section>
 
