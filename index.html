@@ -286,9 +286,10 @@ footer a:hover{text-decoration:underline}
         <div class="tc">
           <div class="tm"><span class="tb bx">Academic Project</span><span class="tdate">2025 – present</span></div>
           <p class="ttitle">VR Safety Simulation — Construction Site</p>
-          <p class="torg">In partnership with GRDF — ENSAM Chalon-sur-Saône</p>
-          <p class="tdesc">Immersive VR environment simulating an excavation site: the user experiences the consequences of non-compliant shoring — a trench collapse triggered by a passing vehicle.</p>
+          <p class="torg">In partnership with GRDF &amp; terrariskVR — ENSAM Chalon-sur-Saône</p>
+          <p class="tdesc">Immersive VR simulation: the user spends a day on an excavation site and experiences the consequences of non-compliant shoring — a trench collapse triggered by a passing vehicle. Contrasts compliant vs non-compliant scenarios.</p>
           <div class="ttech"><span class="tb bx">Unity</span><span class="tb bx">Blender</span><span class="tb bx">VR Headset</span></div>
+          <div class="tprojs" id="xp-grdf"></div>
         </div>
       </div>
 
@@ -473,22 +474,30 @@ const P={
     link:"https://github.com/JessicaOUEDRAOGO/Portfolio/tree/main/Computer-Vision/AI-for-Industrial-Quality-Control"},
   unreal:{name:"House — Arch Visualisation",tech:"Unreal Engine · 3ds Max",tag:"Unreal Engine",tc:"be",
     desc:"Real-time architectural visualisation of a residential house — lighting, materials, and interactive rendering in Unreal Engine.",
-    gif:null,link:"https://github.com/JessicaOUEDRAOGO/Portfolio/tree/main/unreal"}
+    gif:null,link:"https://github.com/JessicaOUEDRAOGO/Portfolio/tree/main/unreal"},
+  grdf:{name:"VR Safety — Construction Site",tech:"Unity · Blender · VR Headset",tag:"Unity / VR",tc:"bx",
+    desc:"Immersive VR simulation developed with GRDF and terrariskVR: the user spends a day on an excavation site and experiences the consequences of non-compliant shoring — a trench collapse triggered by a passing vehicle. The experience contrasts compliant vs non-compliant scenarios to teach safety-critical decisions.",
+    gif:null,
+    slides:["https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/grdf/slide_1.jpg","https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/grdf/slide_2.jpg","https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/grdf/slide_3.jpg","https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/grdf/slide_4.jpg","https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/grdf/slide_5.jpg","https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/grdf/slide_6.jpg","https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/grdf/slide_7.jpg"],
+    captions:["A day on the construction site","Insufficient shoring for surface loads","A passing vehicle triggers the trench collapse","With non-compliant shoring","You are exposed to trench collapse","With compliant shoring","A full accident-free workday"],
+    link:"https://github.com/JessicaOUEDRAOGO/Portfolio"}
 };
 
 function card(id){
   const p=P[id];
   return`<div class="pc" onclick="openMod('${id}')" tabindex="0" role="button" aria-label="${p.name}" onkeydown="if(event.key==='Enter'||event.key===' ')openMod('${id}')">
-    <div class="pt">${p.gif?`<img src="${p.gif}" alt="${p.name}" loading="lazy"><div class="pov"><div class="plc"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>`:`<div class="pte">Demo coming soon</div>`}</div>
+    <div class="pt">${p.gif?`<img src="${p.gif}" alt="${p.name}" loading="lazy"><div class="pov"><div class="plc"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>`:p.slides?`<img src="${p.slides[0]}" alt="${p.name}" loading="lazy"><div class="pov"><div class="plc"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 10h16M4 14h8" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div></div>`:`<div class="pte">Demo coming soon</div>`}</div>
     <div class="pi"><p class="pn">${p.name}</p><p class="ptc">${p.tech}</p></div>
   </div>`;
 }
 document.getElementById('xp1').innerHTML=card('classroom');
 document.getElementById('xp-firearm').innerHTML=card('firearm');
+document.getElementById('xp-grdf').innerHTML=card('grdf');
 document.getElementById('xp2').innerHTML=card('parkinson');
 document.getElementById('xp3').innerHTML=card('firearm')+card('quality');
 document.getElementById('ep1').innerHTML=card('unreal');
 
+let slideIdx=0,slideData=null;
 function openMod(id){
   const p=P[id];
   document.getElementById('m-tag').textContent=p.tag;
@@ -496,10 +505,32 @@ function openMod(id){
   document.getElementById('m-title').textContent=p.name;
   document.getElementById('m-desc').textContent=p.desc;
   document.getElementById('m-link').href=p.link;
-  document.getElementById('m-media').innerHTML=p.gif?`<img src="${p.gif}" alt="${p.name}">`:`<div style="color:#888;font-size:.85rem;padding:2rem;text-align:center">Demo not yet available</div>`;
+  const med=document.getElementById('m-media');
+  if(p.gif){
+    med.innerHTML=`<img src="${p.gif}" alt="${p.name}">`;
+    slideData=null;
+  } else if(p.slides){
+    slideData=p;slideIdx=0;
+    renderSlide(med);
+  } else {
+    med.innerHTML=`<div style="color:#888;font-size:.85rem;padding:2rem;text-align:center">Demo not yet available</div>`;
+    slideData=null;
+  }
   document.getElementById('modal').classList.add('open');
   document.body.style.overflow='hidden';
 }
+function renderSlide(med){
+  const p=slideData;
+  med.style.position='relative';
+  med.innerHTML=`
+    <img src="${p.slides[slideIdx]}" alt="${p.captions[slideIdx]}" style="width:100%;height:100%;object-fit:contain">
+    <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,.55);color:#fff;font-size:.78rem;padding:.5rem 1rem;text-align:center">${p.captions[slideIdx]}</div>
+    <button onclick="prevSlide()" style="position:absolute;left:.6rem;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.85);border:none;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center">‹</button>
+    <button onclick="nextSlide()" style="position:absolute;right:.6rem;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.85);border:none;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center">›</button>
+    <div style="position:absolute;top:.6rem;right:.6rem;background:rgba(0,0,0,.45);color:#fff;font-size:.7rem;padding:2px 7px;border-radius:10px">${slideIdx+1}/${p.slides.length}</div>`;
+}
+function nextSlide(){if(!slideData)return;slideIdx=(slideIdx+1)%slideData.slides.length;renderSlide(document.getElementById('m-media'));}
+function prevSlide(){if(!slideData)return;slideIdx=(slideIdx-1+slideData.slides.length)%slideData.slides.length;renderSlide(document.getElementById('m-media'));}
 function closeMBG(e){if(e.target===document.getElementById('modal'))closeMod();}
 function closeMod(){document.getElementById('modal').classList.remove('open');document.body.style.overflow='';}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMod()});
