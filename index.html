@@ -209,13 +209,18 @@ footer a:hover{text-decoration:underline}
           4. Replace PASTE_YOUR_GOOGLE_DRIVE_FILE_ID below with that ID
           Then delete the vpl div and uncomment the iframe line.
         -->
-        <div style="position:absolute;inset:0;display:flex;flex-direction:column">
-          <iframe src="https://drive.google.com/file/d/1bZWRZGLAm4uB4fiuK_tSZFT2HaJRKEJP/preview" allow="autoplay" allowfullscreen style="flex:1;width:100%;border:none"></iframe>
-          <a href="https://drive.google.com/file/d/1bZWRZGLAm4uB4fiuK_tSZFT2HaJRKEJP/view" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:.4rem;padding:.55rem;background:rgba(15,15,26,.85);color:#ccc;font-size:.75rem;text-decoration:none;border-top:1px solid rgba(255,255,255,.08);flex-shrink:0">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>
-            No sound? Open with audio in Drive
-          </a>
-        </div>
+        <a href="https://drive.google.com/file/d/1bZWRZGLAm4uB4fiuK_tSZFT2HaJRKEJP/view" target="_blank" rel="noopener" style="position:absolute;inset:0;display:flex;flex-direction:column;text-decoration:none">
+          <div style="flex:1;background:#0f0f1a;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;padding:2rem">
+            <div style="width:64px;height:64px;border-radius:50%;background:rgba(59,94,166,.2);border:2px solid rgba(59,94,166,.4);display:flex;align-items:center;justify-content:center;transition:all .2s">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><polygon points="10 8 16 12 10 16 10 8"/></svg>
+            </div>
+            <p style="color:#ddd;font-size:.9rem;font-weight:500;margin:0">Watch introduction video</p>
+            <p style="color:#888;font-size:.75rem;margin:0;text-align:center;max-width:200px">Opens Google Drive player with full audio &amp; controls</p>
+          </div>
+          <div style="padding:.5rem;background:rgba(59,94,166,.15);text-align:center;border-top:1px solid rgba(59,94,166,.2)">
+            <span style="color:#8aabdf;font-size:.72rem">▶ Play on Google Drive</span>
+          </div>
+        </a>
       </div>
       <div class="abt">
         <h3>Engineer &amp; builder of immersive systems</h3>
@@ -248,7 +253,19 @@ footer a:hover{text-decoration:underline}
       <div class="ti">
         <div class="td"></div>
         <div class="tc">
-          <div class="tm"><span class="tb bx">Academic Project</span><span class="tdate">Sep 2025</span></div>
+          <div class="tm"><span class="tb bev">Event</span><span class="tdate">Oct 2025</span></div>
+          <p class="ttitle">XR Franco-German Hackathon — Parkinson Simulation</p>
+          <p class="torg">Paris, France</p>
+          <p class="tdesc">48h sprint — VR experience simulating Parkinson's motor impairments: real-time hand instability with adjustable intensity, letting relatives experience a patient's daily limitations.</p>
+          <div class="ttech"><span class="tb bx">Unity</span><span class="tb bx">Blender</span><span class="tb bx">VR Headset</span></div>
+          <div class="tprojs" id="xp2"></div>
+        </div>
+      </div>
+
+<div class="ti">
+        <div class="td"></div>
+        <div class="tc">
+          <div class="tm"><span class="tb bx">Academic Project</span><span class="tdate">Nov 2025</span></div>
           <p class="ttitle">Collaborative VR Classroom</p>
           <p class="torg">Arts et Métiers (ENSAM) — Chalon-sur-Saône</p>
           <p class="tdesc">Multi-user VR classroom: shared object manipulation, collaborative whiteboard, teacher/student role management, and integrated voice communication.</p>
@@ -257,10 +274,10 @@ footer a:hover{text-decoration:underline}
         </div>
       </div>
 
-      <div class="ti">
+<div class="ti">
         <div class="td"></div>
         <div class="tc">
-          <div class="tm"><span class="tb bx">Academic Project</span><span class="tdate">2025</span></div>
+          <div class="tm"><span class="tb bx">Academic Project</span><span class="tdate">Nov 2025</span></div>
           <p class="ttitle">Industrial Quality Control — AI Defect Detection</p>
           <p class="torg">ENSAM Chalon-sur-Saône</p>
           <p class="tdesc">Real-time quality control across a multi-station assembly line — station recognition and progressive defect detection to reduce rework.</p>
@@ -272,19 +289,7 @@ footer a:hover{text-decoration:underline}
       <div class="ti">
         <div class="td"></div>
         <div class="tc">
-          <div class="tm"><span class="tb bev">Event</span><span class="tdate">2025</span></div>
-          <p class="ttitle">XR Franco-German Hackathon — Parkinson Simulation</p>
-          <p class="torg">Paris, France</p>
-          <p class="tdesc">48h sprint — VR experience simulating Parkinson's motor impairments: real-time hand instability with adjustable intensity, letting relatives experience a patient's daily limitations.</p>
-          <div class="ttech"><span class="tb bx">Unity</span><span class="tb bx">Blender</span><span class="tb bx">VR Headset</span></div>
-          <div class="tprojs" id="xp2"></div>
-        </div>
-      </div>
-
-      <div class="ti">
-        <div class="td"></div>
-        <div class="tc">
-          <div class="tm"><span class="tb bx">Academic Project</span><span class="tdate">2025 – present</span></div>
+          <div class="tm"><span class="tb bx">Academic Project</span><span class="tdate">Jan 2026</span></div>
           <p class="ttitle">VR Safety Simulation — Construction Site</p>
           <p class="torg">In partnership with GRDF &amp; terrariskVR — ENSAM Chalon-sur-Saône</p>
           <p class="tdesc">Immersive VR simulation: the user spends a day on an excavation site and experiences the consequences of non-compliant shoring — a trench collapse triggered by a passing vehicle. Contrasts compliant vs non-compliant scenarios.</p>
@@ -341,8 +346,8 @@ footer a:hover{text-decoration:underline}
         <div class="tc">
           <div class="tm"><span class="tb bx">Academic Project</span><span class="tdate">2024</span></div>
           <p class="ttitle">AR Firearms Training System</p>
-          <p class="torg">Royal Military Academy — Meknes, Morocco</p>
-          <p class="tdesc">Computer vision system designed for cadets of the Royal Military Academy of Meknes to practice assembling, disassembling, and identifying firearms through an augmented reality training interface — enabling safe, repeatable practice without live weapons.</p>
+          <p class="torg">In partnership with the Royal Military Academy (RMA) — Meknes, Morocco</p>
+          <p class="tdesc">Developed in collaboration with the Royal Military Academy of Meknes: a computer vision system to help military cadets train in assembling, disassembling, and identifying firearms. The AR interface overlays real-time recognition cues on the weapon components, enabling safe and repeatable practice without requiring live-fire conditions or physical access to weapons at all times.</p>
           <div class="ttech"><span class="tb bx">Python</span><span class="tb bx">OpenCV</span><span class="tb bx">YOLOv8</span><span class="tb bx">AR Overlay</span></div>
           <div class="tprojs" id="xp-firearm"></div>
         </div>
@@ -494,7 +499,7 @@ document.getElementById('xp1').innerHTML=card('classroom');
 document.getElementById('xp-firearm').innerHTML=card('firearm');
 document.getElementById('xp-grdf').innerHTML=card('grdf');
 document.getElementById('xp2').innerHTML=card('parkinson');
-document.getElementById('xp3').innerHTML=card('firearm')+card('quality');
+document.getElementById('xp3').innerHTML=card('quality');
 document.getElementById('ep1').innerHTML=card('unreal');
 
 let slideIdx=0,slideData=null;
