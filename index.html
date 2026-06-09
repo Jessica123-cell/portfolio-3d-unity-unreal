@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jessica OUEDRAOGO — XR & Computer Vision Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #F7F6F2;
+    --surface: #FFFFFF;
+    --text: #1C1C1A;
+    --muted: #7A7971;
+    --accent: #3B5EA6;
+    --accent-light: #E8EDF7;
+    --border: rgba(28,28,26,0.1);
+    --tag-bg: #EEF1F8;
+    --tag-text: #2A4580;
+    --radius: 14px;
+    --radius-sm: 8px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(247,246,242,0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+  }
+
+  .nav-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.15rem;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.875rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  /* HERO */
+  .hero {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 7rem 2rem 5rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.4rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 1.25rem;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+    color: var(--muted);
+    max-width: 480px;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1.4rem;
+    border-radius: 100px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: white;
+  }
+
+  .btn-primary:hover { background: #2a4a8a; transform: translateY(-1px); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+
+  .btn-outline:hover { background: var(--surface); transform: translateY(-1px); }
+
+  .hero-avatar {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: var(--accent-light);
+    border: 3px solid var(--surface);
+    box-shadow: 0 8px 32px rgba(59,94,166,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .hero-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* SECTION */
+  section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.9rem;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin-bottom: 2.5rem;
+  }
+
+  /* CATEGORIES */
+  .categories {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+  }
+
+  .cat-btn {
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .cat-btn.active, .cat-btn:hover {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+  }
+
+  /* PROJECT GRID */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .project-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+  }
+
+  .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(28,28,26,0.1);
+  }
+
+  .project-thumb {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: var(--accent-light);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .project-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+
+  .project-card:hover .project-thumb img {
+    transform: scale(1.03);
+  }
+
+  .play-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(28,28,26,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .project-card:hover .play-overlay { opacity: 1; }
+
+  .play-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .play-btn svg { width: 20px; height: 20px; fill: var(--accent); }
+
+  .thumb-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--muted);
+    font-size: 0.8rem;
+  }
+
+  .thumb-placeholder svg { width: 32px; height: 32px; opacity: 0.4; }
+
+  .project-body {
+    padding: 1.1rem 1.25rem 1.25rem;
+  }
+
+  .project-cat {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--tag-text);
+    background: var(--tag-bg);
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    margin-bottom: 0.6rem;
+  }
+
+  .project-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.1rem;
+    line-height: 1.2;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+
+  .project-desc {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  /* MODAL */
+  .modal-bg {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(10,10,8,0.65);
+    z-index: 200;
+    padding: 2rem;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+
+  .modal-bg.open { display: flex; }
+
+  .modal {
+    background: var(--surface);
+    border-radius: var(--radius);
+    max-width: 760px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: modalIn 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  @keyframes modalIn {
+    from { opacity: 0; transform: scale(0.93) translateY(12px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: background 0.15s;
+  }
+
+  .modal-close:hover { background: #eee; }
+  .modal-close svg { width: 16px; height: 16px; }
+
+  .modal-media {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #111;
+    border-radius: var(--radius) var(--radius) 0 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .modal-content {
+    padding: 1.75rem 2rem 2rem;
+  }
+
+  .modal-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .modal-cat {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--tag-text);
+    background: var(--tag-bg);
+    padding: 0.3rem 0.7rem;
+    border-radius: 4px;
+  }
+
+  .modal-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.7rem;
+    line-height: 1.15;
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+
+  .modal-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  /* ABOUT */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .about-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+  }
+
+  .about-card-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--accent-light);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.9rem;
+  }
+
+  .about-card-icon svg { width: 18px; height: 18px; stroke: var(--accent); }
+
+  .about-card h3 {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.35rem;
+  }
+
+  .about-card p {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2.5rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--muted);
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  /* RESPONSIVE */
+  @media (max-width: 640px) {
+    .hero { grid-template-columns: 1fr; padding-top: 4rem; }
+    .hero-avatar { width: 100px; height: 100px; margin: 0 auto; order: -1; }
+    .about-grid { grid-template-columns: 1fr; }
+    nav { padding: 0 1rem; }
+    .nav-links { gap: 1.25rem; }
+    section { padding: 3rem 1.25rem; }
+    .modal-content { padding: 1.25rem; }
+    .modal-bg { padding: 0.75rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Jessica Ouedraogo</a>
+  <ul class="nav-links">
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="https://www.linkedin.com/in/jessica-ouedraogo-2485332b0/" target="_blank" rel="noopener">LinkedIn</a></li>
+    <li><a href="https://github.com/JessicaOUEDRAOGO" target="_blank" rel="noopener">GitHub</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div>
+    <p class="hero-eyebrow">XR &amp; Computer Vision Engineer</p>
+    <h1>Building <em>intelligent<br>immersive</em> systems</h1>
+    <p class="hero-desc">Electromechanical engineer specialising in real-time perception, augmented &amp; virtual reality, and AI-driven industrial applications.</p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-primary">View projects</a>
+      <a href="https://www.linkedin.com/in/jessica-ouedraogo-2485332b0/" target="_blank" rel="noopener" class="btn btn-outline">Get in touch</a>
+    </div>
+  </div>
+  <div class="hero-avatar">
+    <img src="https://avatars.githubusercontent.com/u/199961763?v=4" alt="Jessica OUEDRAOGO" onerror="this.style.display='none'">
+  </div>
+</div>
+
+<section id="projects">
+  <p class="section-label">Work</p>
+  <h2 class="section-title">Selected projects</h2>
+
+  <div class="categories">
+    <button class="cat-btn active" onclick="filterProjects('all', this)">All</button>
+    <button class="cat-btn" onclick="filterProjects('unity', this)">Unity / VR</button>
+    <button class="cat-btn" onclick="filterProjects('cv', this)">Computer Vision</button>
+    <button class="cat-btn" onclick="filterProjects('unreal', this)">Unreal Engine</button>
+  </div>
+
+  <div class="projects-grid" id="projects-grid"></div>
+</section>
+
+<section id="about">
+  <p class="section-label">Background</p>
+  <h2 class="section-title">About</h2>
+  <div class="about-grid">
+    <div class="about-card">
+      <div class="about-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+        </svg>
+      </div>
+      <h3>Master's — Digital Engineering</h3>
+      <p>Arts et Métiers (ENSAM), Chalon-sur-Saône. Focus on interactive 3D technologies, XR, and immersive system design.</p>
+    </div>
+    <div class="about-card">
+      <div class="about-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"/><path d="M19.07 4.93A10 10 0 1 0 4.93 19.07M12 2v2M12 20v2M2 12h2M20 12h2"/>
+        </svg>
+      </div>
+      <h3>State Engineering Degree</h3>
+      <p>Electromechanical Engineering — control systems &amp; industrial management. ENSAM Meknes, Morocco.</p>
+    </div>
+    <div class="about-card">
+      <div class="about-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+        </svg>
+      </div>
+      <h3>Core skills</h3>
+      <p>Unity · Unreal Engine · Computer Vision · Python · ArUco / OpenCV · Real-time AI systems · AR/VR interaction design.</p>
+    </div>
+    <div class="about-card">
+      <div class="about-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+        </svg>
+      </div>
+      <h3>Location</h3>
+      <p>Based in France. Open to international opportunities in XR, industrial AI, and immersive simulation.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2025 Jessica OUEDRAOGO</span>
+  <span>
+    <a href="https://github.com/JessicaOUEDRAOGO" target="_blank" rel="noopener">GitHub</a> ·
+    <a href="https://www.linkedin.com/in/jessica-ouedraogo-2485332b0/" target="_blank" rel="noopener">LinkedIn</a>
+  </span>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-bg" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title-text" onclick="closeModal(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModalBtn()" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+    </button>
+    <div class="modal-media" id="modal-media"></div>
+    <div class="modal-content">
+      <div class="modal-meta">
+        <span class="modal-cat" id="modal-cat"></span>
+      </div>
+      <h2 class="modal-title" id="modal-title-text"></h2>
+      <p class="modal-desc" id="modal-desc"></p>
+      <a id="modal-link" href="#" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.8rem;">
+        View on GitHub →
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+const PROJECTS = [
+  {
+    id: "classroom",
+    cat: "unity",
+    catLabel: "Unity / VR",
+    name: "Classroom Collaborative",
+    shortDesc: "Multi-user VR classroom for real-time collaborative learning.",
+    desc: "Multi-user VR classroom designed to enable real-time collaboration and immersive learning experiences. Multiple participants share the same virtual space, interact with shared objects, and communicate as if physically present in a classroom.",
+    gif: "https://github.com/JessicaOUEDRAOGO/Portfolio/raw/main/unity/classRoomCollaborative/classRoom.gif",
+    link: "https://github.com/JessicaOUEDRAOGO/Portfolio/tree/main/unity/classRoomCollaborative"
+  },
+  {
+    id: "parkinson",
+    cat: "unity",
+    catLabel: "Unity / VR",
+    name: "Parkinson Awareness",
+    shortDesc: "VR experience simulating Parkinson's motor impairments.",
+    desc: "Immersive virtual reality experience raising awareness about Parkinson's disease by simulating motor impairments such as hand tremors and loss of precision. Through everyday tasks — drawing, picking up objects, precise manipulation — users experience the difficulties faced by people living with Parkinson's disease.",
+    gif: "https://github.com/JessicaOUEDRAOGO/Portfolio/raw/main/unity/Parkinson/parkinson.gif",
+    link: "https://github.com/JessicaOUEDRAOGO/Portfolio/tree/main/unity/Parkinson"
+  },
+  {
+    id: "firearm",
+    cat: "cv",
+    catLabel: "Computer Vision",
+    name: "Real-Time Firearm Detection",
+    shortDesc: "AI security system with AR training for military education.",
+    desc: "End-to-end computer vision project integrating real-time firearm detection, augmented reality training, and intelligent video surveillance. Designed for military education and security monitoring applications, combining deep learning detection with an AR overlay interface.",
+    gif: "https://github.com/JessicaOUEDRAOGO/Portfolio/raw/main/Computer-Vision/Real-Time%20Firearm%20Detection/Firearmvideo.gif",
+    link: "https://github.com/JessicaOUEDRAOGO/Portfolio/tree/main/Computer-Vision/Real-Time%20Firearm%20Detection"
+  },
+  {
+    id: "quality",
+    cat: "cv",
+    catLabel: "Computer Vision",
+    name: "Industrial Quality Control",
+    shortDesc: "Real-time defect detection across a multi-station assembly line.",
+    desc: "End-to-end industrial computer vision project for real-time quality control in a multi-station assembly line. Combines station recognition and progressive defect detection to improve production efficiency and reduce rework. Built for automated inspection pipelines in manufacturing environments.",
+    gif: "https://github.com/JessicaOUEDRAOGO/Portfolio/raw/main/Computer-Vision/AI-for-Industrial-Quality-Control/AI.gif",
+    link: "https://github.com/JessicaOUEDRAOGO/Portfolio/tree/main/Computer-Vision/AI-for-Industrial-Quality-Control"
+  },
+  {
+    id: "unreal",
+    cat: "unreal",
+    catLabel: "Unreal Engine",
+    name: "Virtual Environment Simulation",
+    shortDesc: "Immersive real-time virtual environment for interactive simulation.",
+    desc: "Immersive real-time virtual environment developed using Unreal Engine for interactive simulation purposes. Explores advanced rendering, physics interactions, and real-time environment responsiveness for training and industrial simulation use cases.",
+    gif: null,
+    link: "https://github.com/JessicaOUEDRAOGO/Portfolio"
+  }
+];
+
+function renderProjects(filter) {
+  const grid = document.getElementById('projects-grid');
+  const filtered = filter === 'all' ? PROJECTS : PROJECTS.filter(p => p.cat === filter);
+  grid.innerHTML = filtered.map(p => `
+    <div class="project-card" onclick="openModal('${p.id}')" tabindex="0" role="button" aria-label="View ${p.name}">
+      <div class="project-thumb">
+        ${p.gif
+          ? `<img src="${p.gif}" alt="${p.name} demo" loading="lazy">
+             <div class="play-overlay"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>`
+          : `<div class="thumb-placeholder">
+               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 10l4.553-2.069A1 1 0 0121 8.87v6.26a1 1 0 01-1.447.899L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+               <span>Demo coming soon</span>
+             </div>`
+        }
+      </div>
+      <div class="project-body">
+        <span class="project-cat">${p.catLabel}</span>
+        <p class="project-name">${p.name}</p>
+        <p class="project-desc">${p.shortDesc}</p>
+      </div>
+    </div>
+  `).join('');
+
+  grid.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') card.click();
+    });
+  });
+}
+
+function filterProjects(filter, btn) {
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderProjects(filter);
+}
+
+function openModal(id) {
+  const p = PROJECTS.find(x => x.id === id);
+  if (!p) return;
+  document.getElementById('modal-cat').textContent = p.catLabel;
+  document.getElementById('modal-title-text').textContent = p.name;
+  document.getElementById('modal-desc').textContent = p.desc;
+  document.getElementById('modal-link').href = p.link;
+  const media = document.getElementById('modal-media');
+  media.innerHTML = p.gif
+    ? `<img src="${p.gif}" alt="${p.name} demo">`
+    : `<div style="color:#888;font-size:0.9rem;padding:2rem;text-align:center;">Demo not yet available</div>`;
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(e) {
+  if (e.target === document.getElementById('modal')) closeModalBtn();
+}
+
+function closeModalBtn() {
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModalBtn();
+});
+
+renderProjects('all');
+</script>
+</body>
+</html>
