@@ -50,7 +50,7 @@ h1.hero em{font-style:italic;color:var(--xr)}
 
 /* ABOUT */
 .al{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
-.vw{position:relative;aspect-ratio:16/9;background:#0f0f1a;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border)}
+.vw{position:relative;aspect-ratio:9/16;max-height:420px;background:#0f0f1a;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border)}
 .vw iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
 .vpl{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;color:#999;font-size:.83rem;text-align:center;padding:1.75rem;background:linear-gradient(135deg,#0f0f1a,#1a1a2e)}
 .vpl svg{opacity:.45}
@@ -208,10 +208,13 @@ footer a:hover{text-decoration:underline}
           Puis remplace le src ci-dessous par l'URL raw :
           https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/video/intro.mp4
         -->
-        <video controls preload="metadata" style="width:100%;height:100%;border-radius:var(--radius);background:#0f0f1a;display:block">
-          <source src="https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/video/intro.mp4" type="video/mp4">
-          Your browser does not support video playback.
-        </video>
+        <iframe
+          src="https://www.youtube.com/embed/zHc7DJUoYN8"
+          title="Jessica OUEDRAOGO — Introduction"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          style="position:absolute;inset:0;width:100%;height:100%;border:none;border-radius:var(--radius)">
+        </iframe>
       </div>
 
       <!-- BIO + LOGOS -->
