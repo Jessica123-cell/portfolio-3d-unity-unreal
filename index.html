@@ -199,7 +199,9 @@ footer a:hover{text-decoration:underline}
           <a href="https://www.linkedin.com/in/jessica-ouedraogo-2485332b0/" target="_blank" rel="noopener" class="btn bo">LinkedIn</a>
         </div>
       </div>
-      <div class="av"><img src="https://jessicaouedraogo.github.io/Portfolio/photo.jpeg" alt="Jessica OUEDRAOGO" loading="lazy"></div>
+      <div class="av"><img src="https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/photo.jpeg" alt="Jessica OUEDRAOGO"></div>
+    </div>
+
     <!-- Ligne 2 : vidéo + bio + logos -->
     <div class="al">
 
@@ -378,6 +380,7 @@ footer a:hover{text-decoration:underline}
           <p class="torg">INTELLCAP — Rabat, Morocco</p>
           <p class="tdesc">Developed a connected smart vest for sports performance monitoring. End-to-end IoT pipeline from sensor acquisition to real-time Unity visualisation.</p>
           <div class="ttech"><span class="tb be">MQTT</span><span class="tb be">Node-RED</span><span class="tb be">Unity</span><span class="tb be">Broker</span></div>
+          <div class="tprojs" id="ep-intellcap"></div>
         </div>
       </div>
 
@@ -511,6 +514,17 @@ const P={
     captions:["Front view — winter evening lighting","Depth of field — bokeh through the trees","Low-angle view — warm golden hour"],
     fbx:"https://github.com/JessicaOUEDRAOGO/Portfolio/tree/main/unreal/House",
     link:"https://github.com/JessicaOUEDRAOGO/Portfolio/tree/main/unreal/House"},
+  intellcap:{name:"Connected Sport Vest — IoT",tech:"Unity · MQTT · Node-RED",tag:"IoT / Unity",tc:"be",
+    desc:"Smart connected vest for sports performance monitoring. End-to-end IoT pipeline: sensors embedded in the vest transmit data via MQTT broker through Node-RED, visualised in real-time in a Unity interface. Developed during internship at INTELLCAP, Rabat.",
+    gif:null,
+    slides:null,
+    video:"https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/unity/gilet/gilet.mp4",
+    link:"https://github.com/JessicaOUEDRAOGO/Portfolio"},
+  intellcap:{name:"Connected Sport Vest — IoT",tech:"Unity · MQTT · Node-RED",tag:"IoT / Unity",tc:"be",
+    desc:"Smart connected vest for sports performance monitoring. End-to-end IoT pipeline: sensors transmit data via MQTT broker through Node-RED, visualised in real-time in Unity. Developed during internship at INTELLCAP, Rabat.",
+    gif:null,slides:null,
+    video:"https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/unity/gilet/gilet.mp4",
+    link:"https://github.com/JessicaOUEDRAOGO/Portfolio"},
   grdf:{name:"VR Safety — Construction Site",tech:"Unity · Blender · VR Headset",tag:"Unity / VR",tc:"bx",
     desc:"Immersive VR simulation developed with GRDF and terrariskVR: the user spends a day on an excavation site and experiences the consequences of non-compliant shoring — a trench collapse triggered by a passing vehicle. The experience contrasts compliant vs non-compliant scenarios to teach safety-critical decisions.",
     gif:null,
@@ -522,7 +536,7 @@ const P={
 function card(id){
   const p=P[id];
   return`<div class="pc" onclick="openMod('${id}')" tabindex="0" role="button" aria-label="${p.name}" onkeydown="if(event.key==='Enter'||event.key===' ')openMod('${id}')">
-    <div class="pt">${p.gif?`<img src="${p.gif}" alt="${p.name}" loading="lazy"><div class="pov"><div class="plc"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>`:p.slides?`<img src="${p.slides[0]}" alt="${p.name}" loading="lazy"><div class="pov"><div class="plc"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 10h16M4 14h8" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div></div>`:`<div class="pte">Demo coming soon</div>`}</div>
+    <div class="pt">${p.gif?`<img src="${p.gif}" alt="${p.name}" loading="lazy"><div class="pov"><div class="plc"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>`:p.slides?`<img src="${p.slides[0]}" alt="${p.name}" loading="lazy"><div class="pov"><div class="plc"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 10h16M4 14h8" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div></div>`:`<div class="pte">${p.video?'▶ Watch demo':'Demo coming soon'}</div>`}</div>
     <div class="pi"><p class="pn">${p.name}</p><p class="ptc">${p.tech}</p></div>
   </div>`;
 }
@@ -532,6 +546,8 @@ document.getElementById('xp-grdf').innerHTML=card('grdf');
 document.getElementById('xp2').innerHTML=card('parkinson');
 document.getElementById('xp3').innerHTML=card('quality');
 document.getElementById('ep1').innerHTML=card('unreal');
+document.getElementById('ep-intellcap').innerHTML=card('intellcap');
+document.getElementById('ep-intellcap').innerHTML=card('intellcap');
 
 let slideIdx=0,slideData=null;
 function openMod(id){
@@ -550,6 +566,14 @@ function openMod(id){
   } else if(p.slides){
     slideData=p;slideIdx=0;
     renderSlide(med);
+  } else if(p.video){
+    med.innerHTML=`<video controls style="width:100%;height:100%;object-fit:contain;background:#000" preload="metadata">
+      <source src="${p.video}" type="video/mp4">
+    </video>`;
+    slideData=null;
+  } else if(p.video){
+    med.innerHTML=`<video controls preload="metadata" style="width:100%;height:100%;object-fit:contain;background:#000"><source src="${p.video}" type="video/mp4"></video>`;
+    slideData=null;
   } else {
     med.innerHTML=`<div style="color:#888;font-size:.85rem;padding:2rem;text-align:center">Demo not yet available</div>`;
     slideData=null;
