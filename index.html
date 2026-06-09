@@ -181,6 +181,14 @@ footer a:hover{text-decoration:underline}
     <li><a href="https://www.linkedin.com/in/jessica-ouedraogo-2485332b0/" target="_blank" rel="noopener">LinkedIn</a></li>
     <li><a href="https://github.com/JessicaOUEDRAOGO" target="_blank" rel="noopener">GitHub</a></li>
   </ul>
+  <button id="lang-btn" onclick="toggleLang()" style="
+    background:transparent;border:1px solid var(--border);border-radius:100px;
+    padding:.3rem .85rem;font-size:.78rem;font-weight:500;cursor:pointer;
+    color:var(--muted);font-family:'DM Sans',sans-serif;transition:all .2s;
+    display:flex;align-items:center;gap:.35rem;flex-shrink:0
+  " onmouseover="this.style.background='var(--surface)'" onmouseout="this.style.background='transparent'">
+    <span style="font-size:.85rem">🌐</span> FR
+  </button>
 </nav>
 
 <!-- HERO + ABOUT -->
@@ -675,4 +683,96 @@ const obs = new IntersectionObserver((entries) => {
   entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
 }, {threshold: 0.12});
 document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+/* ── LANGUE ── */
+const TRANSLATIONS = {
+  en: {
+    'nav-about':'About','nav-xr':'XR','nav-el':'Electromechanics',
+    'hero-eyebrow':'XR & Electromechanical Engineer',
+    'hero-h1':'Building <em>intelligent<br>immersive</em> systems',
+    'hero-sub':'Electromechanical engineer at the intersection of computer vision, AR/VR, and real-time industrial AI. Designing applied systems that bridge the physical and digital worlds.',
+    'hero-btn-xr':'XR work','hero-btn-el':'Electromechanics','hero-btn-li':'LinkedIn',
+    'about-label':'About me','about-title':'Hello, I'm Jessica',
+    'about-p1':'I'm a double-degree engineer combining electromechanical foundations with cutting-edge XR and AI expertise. I design real-time intelligent systems that merge perception, interaction, and industrial logic.',
+    'about-quote':'"What drives me: taking a physical system and giving it digital intelligence — so it collects, communicates, and interacts with its environment. That thread connects all my work, from industrial automation to augmented reality."',
+    'edu-badge-1':'M2 · In progress','edu-name-1':'Arts et Métiers — Chalon-sur-Saône',
+    'edu-badge-2':'State Engineering Degree','edu-name-2':'ENSAM — Meknes, Morocco',
+    'xr-label':'Extended Reality & Computer Vision','xr-title':'XR Timeline',
+    'el-label':'Electromechanical Engineering','el-title':'Control & Industrial Systems',
+    'skills-label':'Toolkit','skills-title':'Skills',
+    'footer-copy':'© 2025 Jessica OUEDRAOGO',
+    'lang-btn':'FR'
+  },
+  fr: {
+    'nav-about':'À propos','nav-xr':'XR','nav-el':'Électromécanique',
+    'hero-eyebrow':'Ingénieure XR & Électromécanique',
+    'hero-h1':'Concevoir des systèmes <em>intelligents<br>et immersifs</em>',
+    'hero-sub':'Ingénieure électromécanique à l'intersection de la vision par ordinateur, de la réalité étendue et de l'IA industrielle temps réel. Je conçois des systèmes appliqués qui relient le monde physique et numérique.',
+    'hero-btn-xr':'Projets XR','hero-btn-el':'Électromécanique','hero-btn-li':'LinkedIn',
+    'about-label':'À propos','about-title':'Bonjour, je suis Jessica',
+    'about-p1':'Je suis ingénieure en double diplôme, alliant des bases solides en électromécanique à une expertise en XR et IA. Je conçois des systèmes intelligents temps réel qui fusionnent perception, interaction et logique industrielle.',
+    'about-quote':'"Ce qui me motive : prendre un système physique et lui donner une intelligence numérique — qu'il collecte, communique et interagisse avec son environnement. C'est ce fil conducteur qui relie tous mes projets, de l'automatisation industrielle à la réalité augmentée."',
+    'edu-badge-1':'M2 · En cours','edu-name-1':'Arts et Métiers — Chalon-sur-Saône',
+    'edu-badge-2':'Diplôme d'Ingénieur d'État','edu-name-2':'ENSAM — Meknès, Maroc',
+    'xr-label':'Réalité Étendue & Vision par Ordinateur','xr-title':'Parcours XR',
+    'el-label':'Génie Électromécanique','el-title':'Systèmes de Contrôle & Industriels',
+    'skills-label':'Compétences','skills-title':'Compétences',
+    'footer-copy':'© 2025 Jessica OUEDRAOGO',
+    'lang-btn':'EN'
+  }
+};
+
+let currentLang = 'en';
+
+function toggleLang() {
+  currentLang = currentLang === 'en' ? 'fr' : 'en';
+  applyLang(currentLang);
+}
+
+function applyLang(lang) {
+  const t = TRANSLATIONS[lang];
+  const btn = document.getElementById('lang-btn');
+
+  // Nav
+  document.querySelector('[href="#about"]').textContent = t['nav-about'];
+  document.querySelector('[href="#xr-section"]').textContent = t['nav-xr'];
+  document.querySelector('[href="#el-section"]').textContent = t['nav-el'];
+
+  // Hero
+  document.querySelector('.ey').textContent = t['hero-eyebrow'];
+  document.querySelector('h1.hero').innerHTML = t['hero-h1'];
+  document.querySelector('.hsub').textContent = t['hero-sub'];
+  const heroBtns = document.querySelectorAll('.ha .btn');
+  heroBtns[0].textContent = t['hero-btn-xr'];
+  heroBtns[1].textContent = t['hero-btn-el'];
+  heroBtns[2].textContent = t['hero-btn-li'];
+
+  // About
+  document.querySelector('#hero .sl').textContent = t['about-label'];
+  document.querySelector('#hero .st').textContent = t['about-title'];
+  document.querySelectorAll('.abt p')[0].textContent = t['about-p1'];
+  document.querySelectorAll('.abt p')[1].textContent = t['about-quote'];
+  document.querySelectorAll('.edu-badge-sm')[0].textContent = t['edu-badge-1'];
+  document.querySelectorAll('.edu-logo-name')[0].textContent = t['edu-name-1'];
+  document.querySelectorAll('.edu-badge-sm')[1].textContent = t['edu-badge-2'];
+  document.querySelectorAll('.edu-logo-name')[1].textContent = t['edu-name-2'];
+
+  // XR section
+  document.querySelector('#xr-section .sl').textContent = t['xr-label'];
+  document.querySelector('#xr-section .st').textContent = t['xr-title'];
+
+  // Electro section
+  document.querySelector('#el-section .sl').textContent = t['el-label'];
+  document.querySelector('#el-section .st').textContent = t['el-title'];
+
+  // Skills
+  document.querySelector('#skills-sec .sl').textContent = t['skills-label'];
+  document.querySelector('#skills-sec .st').textContent = t['skills-title'];
+
+  // Footer
+  document.querySelector('footer span').textContent = t['footer-copy'];
+
+  // Bouton langue
+  btn.innerHTML = `<span style="font-size:.85rem">🌐</span> ${t['lang-btn']}`;
+}
 </script>
