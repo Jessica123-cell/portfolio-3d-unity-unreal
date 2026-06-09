@@ -175,9 +175,9 @@ footer a:hover{text-decoration:underline}
 <nav>
   <a href="#" class="nav-logo">Jessica Ouedraogo</a>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#xr-section">XR</a></li>
-    <li><a href="#el-section">Electromechanics</a></li>
+    <li><a href="#about" data-i18n="nav-about">About</a></li>
+    <li><a href="#xr-section" data-i18n="nav-xr">XR</a></li>
+    <li><a href="#el-section" data-i18n="nav-el">Electromechanics</a></li>
     <li><a href="https://www.linkedin.com/in/jessica-ouedraogo-2485332b0/" target="_blank" rel="noopener">LinkedIn</a></li>
     <li><a href="https://github.com/JessicaOUEDRAOGO" target="_blank" rel="noopener">GitHub</a></li>
   </ul>
@@ -198,12 +198,12 @@ footer a:hover{text-decoration:underline}
     <!-- Ligne 1 : nom + titre -->
     <div class="hg" style="margin-bottom:3rem">
       <div>
-        <p class="ey">XR &amp; Electromechanical Engineer</p>
-        <h1 class="hero">Building <em>intelligent<br>immersive</em> systems</h1>
-        <p class="hsub">Electromechanical engineer at the intersection of computer vision, AR/VR, and real-time industrial AI. Designing applied systems that bridge the physical and digital worlds.</p>
+        <p class="ey" data-i18n="hero-eyebrow">XR &amp; Electromechanical Engineer</p>
+        <h1 class="hero" data-i18n="hero-h1">Building <em>intelligent<br>immersive</em> systems</h1>
+        <p class="hsub" data-i18n="hero-sub">Electromechanical engineer at the intersection of computer vision, AR/VR, and real-time industrial AI. Designing applied systems that bridge the physical and digital worlds.</p>
         <div class="ha">
-          <a href="#xr-section" class="btn bp">XR work</a>
-          <a href="#el-section" class="btn bo">Electromechanics</a>
+          <a href="#xr-section" class="btn bp" data-i18n="hero-btn-xr">XR work</a>
+          <a href="#el-section" class="btn bo" data-i18n="hero-btn-el">Electromechanics</a>
           <a href="https://www.linkedin.com/in/jessica-ouedraogo-2485332b0/" target="_blank" rel="noopener" class="btn bo">LinkedIn</a>
         </div>
       </div>
@@ -211,6 +211,8 @@ footer a:hover{text-decoration:underline}
     </div>
 
     <!-- Ligne 2 : vidéo + bio + logos -->
+        <p class="sl" data-i18n="about-label" style="margin-bottom:.35rem">About me</p>
+    <h2 class="st" data-i18n="about-title" style="margin-bottom:1.5rem">Hello, I'm Jessica</h2>
     <div class="al">
 
       <!-- VIDÉO HTML5 native -->
@@ -231,8 +233,8 @@ footer a:hover{text-decoration:underline}
 
       <!-- BIO + LOGOS -->
       <div class="abt">
-        <p style="font-size:.9rem;color:var(--muted);line-height:1.75;margin-bottom:.85rem">I'm a double-degree engineer combining electromechanical foundations with cutting-edge XR and AI expertise. I design real-time intelligent systems that merge perception, interaction, and industrial logic.</p>
-        <p style="font-size:.88rem;color:var(--muted);line-height:1.7;font-style:italic;border-left:3px solid var(--xr);padding-left:.9rem;margin-bottom:1.5rem">"What drives me: taking a physical system and giving it digital intelligence — so it collects, communicates, and interacts with its environment. That thread connects all my work, from industrial automation to augmented reality."</p>
+        <p style="font-size:.9rem;color:var(--muted);line-height:1.75;margin-bottom:.85rem" data-i18n="about-p1">I'm a double-degree engineer combining electromechanical foundations with cutting-edge XR and AI expertise. I design real-time intelligent systems that merge perception, interaction, and industrial logic.</p>
+        <p style="font-size:.88rem;color:var(--muted);line-height:1.7;font-style:italic;border-left:3px solid var(--xr);padding-left:.9rem;margin-bottom:1.5rem" data-i18n="about-quote">"What drives me: taking a physical system and giving it digital intelligence — so it collects, communicates, and interacts with its environment. That thread connects all my work, from industrial automation to augmented reality."</p>
 
         <!-- LOGOS UNIVERSITÉS -->
         <div class="edu-logos">
@@ -241,8 +243,8 @@ footer a:hover{text-decoration:underline}
                  alt="ENSAM Chalon-sur-Saône"
                  onerror="this.style.display='none'">
             <div>
-              <span class="edu-badge-sm">M2 · In progress</span>
-              <p class="edu-logo-name">Arts et Métiers — Chalon-sur-Saône</p>
+              <span class="edu-badge-sm" data-i18n="edu-badge-1">M2 · In progress</span>
+              <p class="edu-logo-name" data-i18n="edu-name-1">Arts et Métiers — Chalon-sur-Saône</p>
             </div>
           </div>
           <div class="edu-logo-item">
@@ -250,8 +252,8 @@ footer a:hover{text-decoration:underline}
                  alt="ENSAM Meknes"
                  onerror="this.style.display='none'">
             <div>
-              <span class="edu-badge-sm">State Engineering Degree</span>
-              <p class="edu-logo-name">ENSAM — Meknes, Morocco</p>
+              <span class="edu-badge-sm" data-i18n="edu-badge-2">State Engineering Degree</span>
+              <p class="edu-logo-name" data-i18n="edu-name-2">ENSAM — Meknes, Morocco</p>
             </div>
           </div>
         </div>
@@ -264,8 +266,8 @@ footer a:hover{text-decoration:underline}
 <!-- XR -->
 <div class="sw" id="xr-section">
   <div class="si">
-    <p class="sl">Extended Reality &amp; Computer Vision</p>
-    <h2 class="st">XR Timeline</h2>
+    <p class="sl" data-i18n="xr-label">Extended Reality &amp; Computer Vision</p>
+    <h2 class="st" data-i18n="xr-title">XR Timeline</h2>
     <div class="tl">
 
       <div class="ti">
@@ -343,8 +345,8 @@ footer a:hover{text-decoration:underline}
 
 <div class="sw" id="el-section">
   <div class="si">
-    <p class="sl">Electromechanical Engineering</p>
-    <h2 class="st">Control &amp; Industrial Systems</h2>
+    <p class="sl" data-i18n="el-label">Electromechanical Engineering</p>
+    <h2 class="st" data-i18n="el-title">Control &amp; Industrial Systems</h2>
     <div class="tl">
 
       <div class="ti">
@@ -427,8 +429,8 @@ footer a:hover{text-decoration:underline}
 </div>
 <div class="sw" id="skills-sec">
   <div class="si">
-    <p class="sl">Toolkit</p>
-    <h2 class="st">Skills</h2>
+    <p class="sl" data-i18n="skills-label">Toolkit</p>
+    <h2 class="st" data-i18n="skills-title">Skills</h2>
     <div class="skw">
       <div class="skg">
         <h3>XR &amp; 3D</h3>
@@ -476,7 +478,7 @@ footer a:hover{text-decoration:underline}
 </div>
 
 <footer>
-  <span>© 2025 Jessica OUEDRAOGO</span>
+  <span data-i18n="footer-copy">© 2025 Jessica OUEDRAOGO</span>
   <span><a href="https://github.com/JessicaOUEDRAOGO" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/jessica-ouedraogo-2485332b0/" target="_blank" rel="noopener">LinkedIn</a></span>
 </footer>
 
@@ -732,46 +734,14 @@ function toggleLang() {
 function applyLang(lang) {
   const t = TRANSLATIONS[lang];
   const btn = document.getElementById('lang-btn');
-
-  // Nav
-  document.querySelector('[href="#about"]').textContent = t['nav-about'];
-  document.querySelector('[href="#xr-section"]').textContent = t['nav-xr'];
-  document.querySelector('[href="#el-section"]').textContent = t['nav-el'];
-
-  // Hero
-  document.querySelector('.ey').textContent = t['hero-eyebrow'];
-  document.querySelector('h1.hero').innerHTML = t['hero-h1'];
-  document.querySelector('.hsub').textContent = t['hero-sub'];
-  const heroBtns = document.querySelectorAll('.ha .btn');
-  heroBtns[0].textContent = t['hero-btn-xr'];
-  heroBtns[1].textContent = t['hero-btn-el'];
-  heroBtns[2].textContent = t['hero-btn-li'];
-
-  // About
-  document.querySelector('#hero .sl').textContent = t['about-label'];
-  document.querySelector('#hero .st').textContent = t['about-title'];
-  document.querySelectorAll('.abt p')[0].textContent = t['about-p1'];
-  document.querySelectorAll('.abt p')[1].textContent = t['about-quote'];
-  document.querySelectorAll('.edu-badge-sm')[0].textContent = t['edu-badge-1'];
-  document.querySelectorAll('.edu-logo-name')[0].textContent = t['edu-name-1'];
-  document.querySelectorAll('.edu-badge-sm')[1].textContent = t['edu-badge-2'];
-  document.querySelectorAll('.edu-logo-name')[1].textContent = t['edu-name-2'];
-
-  // XR section
-  document.querySelector('#xr-section .sl').textContent = t['xr-label'];
-  document.querySelector('#xr-section .st').textContent = t['xr-title'];
-
-  // Electro section
-  document.querySelector('#el-section .sl').textContent = t['el-label'];
-  document.querySelector('#el-section .st').textContent = t['el-title'];
-
-  // Skills
-  document.querySelector('#skills-sec .sl').textContent = t['skills-label'];
-  document.querySelector('#skills-sec .st').textContent = t['skills-title'];
-
-  // Footer
-  document.querySelector('footer span').textContent = t['footer-copy'];
-
+  // Tous les éléments avec data-i18n
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if(t[key] !== undefined) {
+      if(key === 'hero-h1') el.innerHTML = t[key];
+      else el.textContent = t[key];
+    }
+  });
   // Bouton langue
   btn.innerHTML = `<span style="font-size:.85rem">🌐</span> ${t['lang-btn']}`;
 }
