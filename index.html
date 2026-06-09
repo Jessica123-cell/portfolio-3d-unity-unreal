@@ -162,9 +162,12 @@ footer a:hover{text-decoration:underline}
   .mbd{padding:1.2rem}.mb{padding:.5rem}
 }
 .ttech{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.6rem}
-.thook{font-size:.88rem;font-style:italic;font-weight:400;line-height:1.5;margin-bottom:.75rem;display:block;opacity:.75}
-#xr-section .thook{color:rgba(255,255,255,.8)}
-#el-section .thook{color:rgba(255,255,255,.8)}
+.thook{font-size:.88rem;font-style:italic;font-weight:400;line-height:1.6;margin-bottom:.75rem;display:block}
+#xr-section .thook{color:#a8c4e8}
+#el-section .thook{color:#7dd4b4}
+.thook .word{display:inline-block;overflow:hidden;vertical-align:bottom}
+.thook .word span{display:inline-block;transform:translateY(110%);opacity:0;transition:transform .5s cubic-bezier(.16,1,.3,1), opacity .4s ease}
+.thook.hook-visible .word span{transform:translateY(0);opacity:1}
 .sep{width:100%;overflow:hidden;line-height:0;pointer-events:none}
 .sep svg{display:block;width:100%}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
@@ -698,6 +701,46 @@ const obs = new IntersectionObserver((entries) => {
   entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
 }, {threshold: 0.12});
 document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+/* SplitText animation pour les questions d'accroche */
+function splitHook(el) {
+  const text = el.textContent.trim();
+  el.innerHTML = text.split(' ').map((word, i) =>
+    `<span class="word" style="transition-delay:${i * 0.06}s"><span>${word}</span></span>`
+  ).join(' ');
+}
+
+function initHooks() {
+  document.querySelectorAll('.thook').forEach(el => {
+    if (!el.dataset.split) {
+      splitHook(el);
+      el.dataset.split = '1';
+    }
+  });
+  const hookObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('hook-visible');
+        hookObs.unobserve(e.target);
+      }
+    });
+  }, {threshold: 0.3});
+  document.querySelectorAll('.thook').forEach(el => hookObs.observe(el));
+}
+
+initHooks();
+
+/* Ré-appliquer splitText après changement de langue */
+const _origApplyLang = applyLang;
+applyLang = function(lang) {
+  _origApplyLang(lang);
+  // Réinitialiser les hooks après traduction
+  document.querySelectorAll('.thook').forEach(el => {
+    el.dataset.split = '';
+    el.classList.remove('hook-visible');
+  });
+  setTimeout(initHooks, 50);
+};
 
 /* ── LANGUE ── */
 const TRANSLATIONS = {
