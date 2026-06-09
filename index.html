@@ -157,6 +157,7 @@ footer a:hover{text-decoration:underline}
   .si{padding:3.5rem 1.25rem}
   .mbd{padding:1.2rem}.mb{padding:.5rem}
 }
+.ttech{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.6rem}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
@@ -208,20 +209,19 @@ footer a:hover{text-decoration:underline}
           4. Replace PASTE_YOUR_GOOGLE_DRIVE_FILE_ID below with that ID
           Then delete the vpl div and uncomment the iframe line.
         -->
-        <iframe src="https://drive.google.com/file/d/1bZWRZGLAm4uB4fiuK_tSZFT2HaJRKEJP/preview" allowfullscreen></iframe>
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column">
+          <iframe src="https://drive.google.com/file/d/1bZWRZGLAm4uB4fiuK_tSZFT2HaJRKEJP/preview" allow="autoplay" allowfullscreen style="flex:1;width:100%;border:none"></iframe>
+          <a href="https://drive.google.com/file/d/1bZWRZGLAm4uB4fiuK_tSZFT2HaJRKEJP/view" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:.4rem;padding:.55rem;background:rgba(15,15,26,.85);color:#ccc;font-size:.75rem;text-decoration:none;border-top:1px solid rgba(255,255,255,.08);flex-shrink:0">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>
+            No sound? Open with audio in Drive
+          </a>
+        </div>
       </div>
       <div class="abt">
         <h3>Engineer &amp; builder of immersive systems</h3>
         <p>I'm a double-degree engineer combining electromechanical foundations with cutting-edge XR and AI expertise. I design real-time intelligent systems that merge perception, interaction, and industrial logic.</p>
         <p>Currently completing my Master's in Management of Interactive 3D Technologies at Arts et Métiers (ENSAM), Chalon-sur-Saône, while building on my State Engineering degree from ENSAM Meknes.</p>
-        <div class="chips">
-          <span class="chip">Computer Vision</span>
-          <span class="chip">Unity · Unreal Engine</span>
-          <span class="chip">AR / VR</span>
-          <span class="chip">Python · OpenCV</span>
-          <span class="chip">Industrial AI</span>
-          <span class="chip">Real-time systems</span>
-        </div>
+        <p style="font-size:.88rem;color:var(--muted);line-height:1.7;font-style:italic;border-left:3px solid var(--xr);padding-left:.9rem;margin-top:.5rem">"What drives me: taking a physical system and giving it digital intelligence — so it collects, communicates, and interacts with its environment. That thread connects all my work, from industrial automation to augmented reality."</p>
       </div>
     </div>
   </div>
@@ -238,10 +238,21 @@ footer a:hover{text-decoration:underline}
       <div class="ti">
         <div class="td"></div>
         <div class="tc">
-          <div class="tm"><span class="tb ba">Academic</span><span class="tdate">2024 – present</span></div>
+          <div class="tm"><span class="tb ba">Academic</span><span class="tdate">Sep 2025 – present</span></div>
           <p class="ttitle">M2 — Management of Interactive 3D Technologies</p>
           <p class="torg">Arts et Métiers (ENSAM) — Chalon-sur-Saône, France</p>
           <p class="tdesc">Double degree specialising in XR, real-time 3D, computer vision, and immersive system design for industrial and training applications.</p>
+        </div>
+      </div>
+
+      <div class="ti">
+        <div class="td"></div>
+        <div class="tc">
+          <div class="tm"><span class="tb bx">Academic Project</span><span class="tdate">Sep 2025</span></div>
+          <p class="ttitle">Collaborative VR Classroom</p>
+          <p class="torg">Arts et Métiers (ENSAM) — Chalon-sur-Saône</p>
+          <p class="tdesc">Multi-user VR classroom: shared object manipulation, collaborative whiteboard, teacher/student role management, and integrated voice communication.</p>
+          <div class="ttech"><span class="tb bx">Unity</span><span class="tb bx">Netcode for GameObjects</span><span class="tb bx">Vivox</span><span class="tb bx">VR Headset</span></div>
           <div class="tprojs" id="xp1"></div>
         </div>
       </div>
@@ -249,10 +260,23 @@ footer a:hover{text-decoration:underline}
       <div class="ti">
         <div class="td"></div>
         <div class="tc">
+          <div class="tm"><span class="tb bx">Academic Project</span><span class="tdate">2025</span></div>
+          <p class="ttitle">Industrial Quality Control — AI Defect Detection</p>
+          <p class="torg">ENSAM Chalon-sur-Saône</p>
+          <p class="tdesc">Real-time quality control across a multi-station assembly line — station recognition and progressive defect detection to reduce rework.</p>
+          <div class="ttech"><span class="tb bx">Python</span><span class="tb bx">OpenCV</span><span class="tb bx">YOLOv8</span></div>
+          <div class="tprojs" id="xp3"></div>
+        </div>
+      </div>
+
+      <div class="ti">
+        <div class="td"></div>
+        <div class="tc">
           <div class="tm"><span class="tb bev">Event</span><span class="tdate">2025</span></div>
-          <p class="ttitle">XR Franco-German Hackathon</p>
+          <p class="ttitle">XR Franco-German Hackathon — Parkinson Simulation</p>
           <p class="torg">Paris, France</p>
-          <p class="tdesc">48h sprint — developed a VR awareness experience simulating Parkinson's motor impairments for empathy-driven design.</p>
+          <p class="tdesc">48h sprint — VR experience simulating Parkinson's motor impairments: real-time hand instability with adjustable intensity, letting relatives experience a patient's daily limitations.</p>
+          <div class="ttech"><span class="tb bx">Unity</span><span class="tb bx">Blender</span><span class="tb bx">VR Headset</span></div>
           <div class="tprojs" id="xp2"></div>
         </div>
       </div>
@@ -260,11 +284,22 @@ footer a:hover{text-decoration:underline}
       <div class="ti">
         <div class="td"></div>
         <div class="tc">
-          <div class="tm"><span class="tb bx">Project</span><span class="tdate">2024</span></div>
-          <p class="ttitle">Computer Vision — Industrial &amp; Security Applications</p>
-          <p class="torg">ENSAM Chalon-sur-Saône</p>
-          <p class="tdesc">End-to-end AI pipelines for real-time detection and quality control: firearm detection with AR training overlay, and multi-station industrial defect detection.</p>
-          <div class="tprojs" id="xp3"></div>
+          <div class="tm"><span class="tb bx">Academic Project</span><span class="tdate">2025 – present</span></div>
+          <p class="ttitle">VR Safety Simulation — Construction Site</p>
+          <p class="torg">In partnership with GRDF — ENSAM Chalon-sur-Saône</p>
+          <p class="tdesc">Immersive VR environment simulating an excavation site: the user experiences the consequences of non-compliant shoring — a trench collapse triggered by a passing vehicle.</p>
+          <div class="ttech"><span class="tb bx">Unity</span><span class="tb bx">Blender</span><span class="tb bx">VR Headset</span></div>
+        </div>
+      </div>
+
+      <div class="ti">
+        <div class="td"></div>
+        <div class="tc">
+          <div class="tm"><span class="tb bp2">Internship</span><span class="tdate">Feb – Jul 2026</span></div>
+          <p class="ttitle">Sensory Engineering Intern — NappingAnalysisGUI</p>
+          <p class="torg">Centrale Lyon ENISE · Laboratoire LIRIS &amp; Institut Lyfe — Saint-Étienne, France</p>
+          <p class="tdesc">Developed and validated a projective AR interactive table prototype for culinary sensory analysis (napping method), tested in real conditions with participants on coffee samples. Simultaneous tracking of 9 visually identical cups with unique stable identities even during crossings. Real-time personalised projector overlays around each cup.</p>
+          <div class="ttech"><span class="tb bx">Python</span><span class="tb bx">OpenCV</span><span class="tb bx">ArUco</span><span class="tb bx">MOSSE/KCF</span><span class="tb bx">PyQt6</span><span class="tb bx">NumPy</span></div>
         </div>
       </div>
 
@@ -272,7 +307,6 @@ footer a:hover{text-decoration:underline}
   </div>
 </div>
 
-<!-- ELECTRO -->
 <div class="sw" id="el-section">
   <canvas class="bg-cv" id="cv-el"></canvas>
   <div class="si">
@@ -283,20 +317,55 @@ footer a:hover{text-decoration:underline}
       <div class="ti">
         <div class="td"></div>
         <div class="tc">
-          <div class="tm"><span class="tb ba">Academic</span><span class="tdate">2020 – 2024</span></div>
+          <div class="tm"><span class="tb ba">Academic</span><span class="tdate">Sep 2021 – present</span></div>
           <p class="ttitle">State Engineering Degree — Electromechanical Engineering</p>
-          <p class="torg">École Nationale Supérieure d'Arts et Métiers (ENSAM) — Meknes, Morocco</p>
-          <p class="tdesc">Control systems, industrial management, and electromechanical design. Foundation in automation, mechatronics, and process engineering.</p>
+          <p class="torg">École Nationale Supérieure des Arts et Métiers (ENSAM) — Meknes, Morocco</p>
+          <p class="tdesc">Control systems, industrial management, and electromechanical design. Core skills in automation, mechatronics, PLC programming, and industrial process engineering.</p>
         </div>
       </div>
 
       <div class="ti">
         <div class="td"></div>
         <div class="tc">
-          <div class="tm"><span class="tb bp2">Professional</span><span class="tdate">Add your internship date</span></div>
-          <p class="ttitle">Industrial Internship / Project</p>
-          <p class="torg">Company / Organisation</p>
-          <p class="tdesc">Replace this entry with your actual professional experience — internships, projects, or lab work in electromechanics and control systems.</p>
+          <div class="tm"><span class="tb bp2">Internship</span><span class="tdate">Jul – Aug 2024</span></div>
+          <p class="ttitle">Automation Intern — Generator Cooling System</p>
+          <p class="torg">SONABEL — Burkina Faso</p>
+          <p class="tdesc">Automated the cooling system of generator sets (air coolers). Programmed a Siemens S7-1200 PLC with temperature-threshold fan startup and speed modulation via variable drives — moving from constant full-speed to continuous real-temperature regulation and reducing energy consumption. Real-time SCADA monitoring of inlet/outlet temperatures.</p>
+          <div class="ttech"><span class="tb be">TIA Portal</span><span class="tb be">Siemens S7-1200</span><span class="tb be">SCADA</span><span class="tb be">Node-RED</span><span class="tb be">VFD</span></div>
+        </div>
+      </div>
+
+      <div class="ti">
+        <div class="td"></div>
+        <div class="tc">
+          <div class="tm"><span class="tb bx">Academic Project</span><span class="tdate">2024</span></div>
+          <p class="ttitle">AR Firearms Training System</p>
+          <p class="torg">Royal Military Academy — Meknes, Morocco</p>
+          <p class="tdesc">Computer vision system designed for cadets of the Royal Military Academy of Meknes to practice assembling, disassembling, and identifying firearms through an augmented reality training interface — enabling safe, repeatable practice without live weapons.</p>
+          <div class="ttech"><span class="tb bx">Python</span><span class="tb bx">OpenCV</span><span class="tb bx">YOLOv8</span><span class="tb bx">AR Overlay</span></div>
+          <div class="tprojs" id="xp-firearm"></div>
+        </div>
+      </div>
+
+      <div class="ti">
+        <div class="td"></div>
+        <div class="tc">
+          <div class="tm"><span class="tb bp2">Internship</span><span class="tdate">May – Aug 2025</span></div>
+          <p class="ttitle">IoT Developer Intern — Connected Vest for Sports</p>
+          <p class="torg">INTELLCAP — Rabat, Morocco</p>
+          <p class="tdesc">Developed a connected smart vest for sports performance monitoring. End-to-end IoT pipeline from sensor acquisition to real-time Unity visualisation.</p>
+          <div class="ttech"><span class="tb be">MQTT</span><span class="tb be">Node-RED</span><span class="tb be">Unity</span><span class="tb be">Broker</span></div>
+        </div>
+      </div>
+
+      <div class="ti">
+        <div class="td"></div>
+        <div class="tc">
+          <div class="tm"><span class="tb bp2">Internship</span><span class="tdate">Jul – Aug 2025</span></div>
+          <p class="ttitle">Automation Intern — Fountain Irrigation System</p>
+          <p class="torg">Structal Engineering — Fès-Meknès, Morocco</p>
+          <p class="tdesc">Automation of a fountain irrigation system using TIA Portal PLC programming.</p>
+          <div class="ttech"><span class="tb be">TIA Portal</span></div>
         </div>
       </div>
 
@@ -342,20 +411,23 @@ footer a:hover{text-decoration:underline}
         </div>
       </div>
       <div class="skg">
-        <h3>Electromechanics</h3>
+        <h3>Automation &amp; Industrial</h3>
         <div class="skt">
-          <span class="sk skt2">Control Systems</span>
-          <span class="sk skt2">Industrial Management</span>
-          <span class="sk skt2">Automation</span>
-          <span class="sk skg2">Mechatronics</span>
+          <span class="sk skt2">TIA Portal · PL7Pro</span>
+          <span class="sk skt2">Siemens S7-1200</span>
+          <span class="sk skt2">SCADA · Node-RED</span>
+          <span class="sk skt2">OPC UA/DA · Modbus</span>
+          <span class="sk skt2">MQTT · Profinet</span>
+          <span class="sk skg2">MATLAB · Simulink</span>
+          <span class="sk skg2">CATIA · SOLIDWORKS</span>
         </div>
       </div>
       <div class="skg">
         <h3>Languages</h3>
         <div class="skt">
-          <span class="sk skg2">French — Native</span>
-          <span class="sk skg2">English — Professional</span>
-          <span class="sk skg2">Arabic — Native</span>
+          <span class="sk skg2">French — Native (C1)</span>
+          <span class="sk skg2">English — Professional (B2)</span>
+          
         </div>
       </div>
     </div>
@@ -412,6 +484,7 @@ function card(id){
   </div>`;
 }
 document.getElementById('xp1').innerHTML=card('classroom');
+document.getElementById('xp-firearm').innerHTML=card('firearm');
 document.getElementById('xp2').innerHTML=card('parkinson');
 document.getElementById('xp3').innerHTML=card('firearm')+card('quality');
 document.getElementById('ep1').innerHTML=card('unreal');
