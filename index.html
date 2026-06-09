@@ -28,7 +28,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(247,246,242,.93);backdrop-
 /* SECTION WRAP */
 .sw{position:relative;overflow:hidden}
 .si{position:relative;z-index:2;max-width:960px;margin:0 auto;padding:5rem 2rem}
-.bg-cv{position:absolute;inset:0;z-index:0;pointer-events:none}
+
 
 /* HERO */
 #hero{background:var(--bg)}
@@ -68,29 +68,29 @@ h1.hero em{font-style:italic;color:var(--xr)}
 .edu-logo-name{font-size:.82rem;font-weight:500;color:var(--text);margin:0}
 
 /* XR BG */
-#xr-section{background:#EBF0FB}
-#xr-section .st{color:#1E3A7A}
-#xr-section .sl{color:var(--xr)}
+#xr-section{background:linear-gradient(145deg,#0f1b3d 0%,#1a2f6b 40%,#0d1f4a 100%)}
+#xr-section .st{color:#E8EDF7}
+#xr-section .sl{color:#8AABDF}
 /* ELECTRO BG */
-#el-section{background:#EBF5F1}
-#el-section .st{color:#0D5040}
-#el-section .sl{color:var(--el)}
+#el-section{background:linear-gradient(145deg,#052117 0%,#0a3d2b 45%,#051a12 100%)}
+#el-section .st{color:#C8EDE3}
+#el-section .sl{color:#5DCAA5}
 
 /* TIMELINE */
 .tl{position:relative;padding-left:2rem}
 .tl::before{content:'';position:absolute;left:.55rem;top:.5rem;bottom:.5rem;width:2px;border-radius:2px}
-#xr-section .tl::before{background:linear-gradient(180deg,var(--xr),rgba(59,94,166,.1))}
-#el-section .tl::before{background:linear-gradient(180deg,var(--el),rgba(26,122,94,.1))}
+#xr-section .tl::before{background:linear-gradient(180deg,#8AABDF,rgba(138,171,223,.1))}
+#el-section .tl::before{background:linear-gradient(180deg,#5DCAA5,rgba(93,202,165,.1))}
 .ti{position:relative;margin-bottom:2rem}
 .ti:last-child{margin-bottom:0}
 .td{position:absolute;left:-1.93rem;top:.55rem;width:14px;height:14px;border-radius:50%;border:3px solid var(--bg)}
-#xr-section .td{background:var(--xr);box-shadow:0 0 0 2px var(--xr)}
-#el-section .td{background:var(--el);box-shadow:0 0 0 2px var(--el)}
+#xr-section .td{background:#8AABDF;box-shadow:0 0 0 2px #8AABDF;border-color:#0f1b3d}
+#el-section .td{background:#5DCAA5;box-shadow:0 0 0 2px #5DCAA5;border-color:#052117}
 .tc{background:rgba(255,255,255,.72);backdrop-filter:blur(10px);border-radius:var(--radius);padding:1.2rem 1.4rem;transition:transform .2s,box-shadow .2s}
-#xr-section .tc{border:1px solid rgba(59,94,166,.12)}
-#xr-section .tc:hover{transform:translateX(4px);box-shadow:0 6px 24px rgba(59,94,166,.1)}
-#el-section .tc{border:1px solid rgba(26,122,94,.12)}
-#el-section .tc:hover{transform:translateX(4px);box-shadow:0 6px 24px rgba(26,122,94,.1)}
+#xr-section .tc{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.07)}
+#xr-section .tc:hover{transform:translateX(4px);box-shadow:0 6px 32px rgba(0,0,0,.3)}
+#el-section .tc{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.07)}
+#el-section .tc:hover{transform:translateX(4px);box-shadow:0 6px 32px rgba(0,0,0,.3)}
 .tm{display:flex;align-items:center;gap:.55rem;margin-bottom:.45rem;flex-wrap:wrap}
 .tb{font-size:.67rem;font-weight:500;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .6rem;border-radius:4px}
 .ba{background:#F3EEF8;color:#5B3FA8}
@@ -98,10 +98,10 @@ h1.hero em{font-style:italic;color:var(--xr)}
 .bx{background:var(--xr-tb);color:var(--xr-tt)}
 .be{background:var(--el-tb);color:var(--el-tt)}
 .bev{background:#FFF4DE;color:#8B5E00}
-.tdate{font-size:.73rem;color:var(--muted)}
-.ttitle{font-family:'DM Serif Display',serif;font-size:1.08rem;margin-bottom:.3rem}
-.torg{font-size:.8rem;color:var(--muted);font-style:italic;margin-bottom:.55rem}
-.tdesc{font-size:.84rem;color:var(--muted);line-height:1.65;margin-bottom:.65rem}
+.tdate{font-size:.73rem;color:rgba(255,255,255,.45)}
+.ttitle{font-family:'DM Serif Display',serif;font-size:1.08rem;margin-bottom:.3rem;color:#fff}
+.torg{font-size:.8rem;color:rgba(255,255,255,.5);font-style:italic;margin-bottom:.55rem}
+.tdesc{font-size:.84rem;color:rgba(255,255,255,.65);line-height:1.65;margin-bottom:.65rem}
 .tprojs{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:.7rem;margin-top:.7rem}
 
 /* PROJ MINI CARDS */
@@ -180,7 +180,6 @@ footer a:hover{text-decoration:underline}
 
 <!-- HERO + ABOUT -->
 <div class="sw" id="hero">
-  <canvas class="bg-cv" id="cv-hero"></canvas>
   <div class="si">
 
     <!-- Ligne 1 : nom + titre -->
@@ -251,7 +250,6 @@ footer a:hover{text-decoration:underline}
 
 <!-- XR -->
 <div class="sw" id="xr-section">
-  <canvas class="bg-cv" id="cv-xr"></canvas>
   <div class="si">
     <p class="sl">Extended Reality &amp; Computer Vision</p>
     <h2 class="st">XR Timeline</h2>
@@ -331,7 +329,6 @@ footer a:hover{text-decoration:underline}
 </div>
 
 <div class="sw" id="el-section">
-  <canvas class="bg-cv" id="cv-el"></canvas>
   <div class="si">
     <p class="sl">Electromechanical Engineering</p>
     <h2 class="st">Control &amp; Industrial Systems</h2>
@@ -500,7 +497,7 @@ const P={
   unreal:{name:"House — Arch Visualisation",tech:"Unreal Engine · 3ds Max",tag:"Unreal Engine",tc:"be",
     desc:"Real-time architectural visualisation of a residential house built in Unreal Engine. Features dynamic winter lighting, depth of field, particle snow effects, and detailed material work. The scene was modelled in 3ds Max, UV-mapped, and brought into Unreal Engine for real-time rendering.",
     gif:null,
-    slides:["https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/unreal/House/Rendu_1.png","https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/unreal/House/Rendu_2.png","https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/unreal/House/Rendu_3.png"],
+    slides:["https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/unreal/House/rendu_1.png","https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/unreal/House/rendu_2.png","https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/unreal/House/rendu_3.png"],
     captions:["Front view — winter evening lighting","Depth of field — bokeh through the trees","Low-angle view — warm golden hour"],
     fbx:"https://github.com/JessicaOUEDRAOGO/Portfolio/tree/main/unreal/House",
     link:"https://github.com/JessicaOUEDRAOGO/Portfolio/tree/main/unreal/House"},
@@ -566,115 +563,76 @@ function closeMBG(e){if(e.target===document.getElementById('modal'))closeMod();}
 function closeMod(){document.getElementById('modal').classList.remove('open');document.body.style.overflow='';}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMod()});
 
-/* ── BACKGROUND ANIMATIONS ── */
+/* ── BACKGROUNDS ── */
 
-/* HERO — particle mesh */
+/* Grain global animé sur toute la page */
 (function(){
-  const c=document.getElementById('cv-hero'),ctx=c.getContext('2d');
-  let W,H,pts=[];
-  const resize=()=>{W=c.width=c.parentElement.offsetWidth;H=c.height=c.parentElement.offsetHeight;pts=Array.from({length:55},()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.4+.4,vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.28,a:Math.random()}));};
-  const draw=()=>{
-    ctx.clearRect(0,0,W,H);
-    for(let i=0;i<pts.length;i++){
-      const p=pts[i];
-      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(59,94,166,${p.a*.22})`;ctx.fill();
-      p.x+=p.vx;p.y+=p.vy;
-      if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
-      for(let j=i+1;j<pts.length;j++){
-        const q=pts[j],dx=p.x-q.x,dy=p.y-q.y,d=Math.sqrt(dx*dx+dy*dy);
-        if(d<110){ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.strokeStyle=`rgba(59,94,166,${(1-d/110)*.055})`;ctx.stroke();}
-      }
-    }
-    requestAnimationFrame(draw);
-  };
-  window.addEventListener('resize',resize);resize();draw();
+  const grain = document.createElement('div');
+  grain.style.cssText = `
+    position:fixed;inset:0;z-index:1000;pointer-events:none;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity:.032;
+    animation:grain 0.8s steps(2) infinite;
+  `;
+  const style = document.createElement('style');
+  style.textContent = `@keyframes grain{
+    0%{transform:translate(0,0)}10%{transform:translate(-2%,-3%)}20%{transform:translate(3%,1%)}
+    30%{transform:translate(-1%,4%)}40%{transform:translate(2%,-2%)}50%{transform:translate(-3%,2%)}
+    60%{transform:translate(1%,-4%)}70%{transform:translate(-2%,3%)}80%{transform:translate(3%,-1%)}
+    90%{transform:translate(-1%,2%)}100%{transform:translate(2%,0)}
+  }`;
+  document.head.appendChild(style);
+  document.body.appendChild(grain);
 })();
 
-/* XR — VR headsets + camera reticles + scan line */
+/* Blobs XR */
 (function(){
-  const c=document.getElementById('cv-xr'),ctx=c.getContext('2d');
-  let W,H,sc=0;
-  const resize=()=>{W=c.width=c.parentElement.offsetWidth;H=c.height=c.parentElement.offsetHeight;};
-  const reticle=(x,y,r,a)=>{
-    ctx.save();ctx.globalAlpha=a;ctx.strokeStyle='rgba(59,94,166,.55)';ctx.lineWidth=1;
-    ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.stroke();
-    ctx.beginPath();ctx.arc(x,y,r*.32,0,Math.PI*2);ctx.stroke();
-    const t=7;
-    [[x-r,y,x-r+t,y],[x+r,y,x+r-t,y],[x,y-r,x,y-r+t],[x,y+r,x,y+r-t]].forEach(([ax,ay,bx,by])=>{ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(bx,by);ctx.stroke();});
-    ctx.restore();
-  };
-  const vr=(x,y,s,a)=>{
-    ctx.save();ctx.globalAlpha=a;ctx.strokeStyle='rgba(59,94,166,.18)';ctx.lineWidth=1.3;
-    ctx.beginPath();
-    ctx.moveTo(x-s*.68,y-s*.18);
-    ctx.bezierCurveTo(x-s*.7,y-s*.44,x-s*.33,y-s*.5,x,y-s*.5);
-    ctx.bezierCurveTo(x+s*.33,y-s*.5,x+s*.7,y-s*.44,x+s*.68,y-s*.18);
-    ctx.bezierCurveTo(x+s*.7,y+s*.14,x+s*.38,y+s*.28,x,y+s*.28);
-    ctx.bezierCurveTo(x-s*.38,y+s*.28,x-s*.7,y+s*.14,x-s*.68,y-s*.18);
-    ctx.closePath();ctx.stroke();
-    [x-s*.27,x+s*.27].forEach(lx=>{ctx.beginPath();ctx.arc(lx,y-s*.1,s*.21,0,Math.PI*2);ctx.stroke();});
-    ctx.restore();
-  };
-  const draw=()=>{
-    ctx.clearRect(0,0,W,H);
-    sc=(sc+.35)%H;
-    ctx.fillStyle='rgba(59,94,166,.035)';ctx.fillRect(0,sc,W,1.5);
-    ctx.strokeStyle='rgba(59,94,166,.038)';ctx.lineWidth=1;
-    for(let x=0;x<=W;x+=64){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();}
-    for(let y=0;y<=H;y+=64){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}
-    vr(W*.14,H*.35,88,.72);vr(W*.82,H*.62,68,.52);vr(W*.53,H*.12,52,.38);
-    reticle(W*.73,H*.22,27,.58);reticle(W*.27,H*.76,21,.46);reticle(W*.9,H*.46,17,.36);
-    requestAnimationFrame(draw);
-  };
-  window.addEventListener('resize',resize);resize();draw();
+  const sec = document.getElementById('xr-section');
+  if(!sec) return;
+  const el = document.createElement('div');
+  el.style.cssText = 'position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden';
+  el.innerHTML = `
+    <div style="position:absolute;width:600px;height:600px;border-radius:50%;
+      background:radial-gradient(circle,rgba(59,94,166,.35) 0%,transparent 70%);
+      top:-150px;right:-100px;filter:blur(80px);
+      animation:blobFloat 12s ease-in-out infinite alternate"></div>
+    <div style="position:absolute;width:400px;height:400px;border-radius:50%;
+      background:radial-gradient(circle,rgba(100,140,220,.2) 0%,transparent 70%);
+      bottom:10%;left:5%;filter:blur(60px);
+      animation:blobFloat 16s ease-in-out infinite alternate-reverse"></div>
+    <div style="position:absolute;width:300px;height:300px;border-radius:50%;
+      background:radial-gradient(circle,rgba(138,171,223,.15) 0%,transparent 70%);
+      top:40%;left:40%;filter:blur(50px);
+      animation:blobFloat 20s ease-in-out infinite alternate"></div>`;
+  sec.insertBefore(el, sec.firstChild);
 })();
 
-/* ELECTRO — PCB traces + gears + sine control curves */
+/* Blobs Electro */
 (function(){
-  const c=document.getElementById('cv-el'),ctx=c.getContext('2d');
-  let W,H,t=0;
-  const resize=()=>{W=c.width=c.parentElement.offsetWidth;H=c.height=c.parentElement.offsetHeight;};
-  const gear=(x,y,r,n,a)=>{
-    ctx.save();ctx.globalAlpha=a;ctx.strokeStyle='rgba(26,122,94,.22)';ctx.lineWidth=1.1;
-    const s=Math.PI*2/n;ctx.beginPath();
-    for(let i=0;i<n;i++){
-      const ang=i*s,ro=r*1.28;
-      ctx.lineTo(Math.cos(ang)*r+x,Math.sin(ang)*r+y);
-      ctx.lineTo(Math.cos(ang)*ro+x,Math.sin(ang)*ro+y);
-      ctx.lineTo(Math.cos(ang+s*.55)*ro+x,Math.sin(ang+s*.55)*ro+y);
-      ctx.lineTo(Math.cos(ang+s*.55)*r+x,Math.sin(ang+s*.55)*r+y);
-    }
-    ctx.closePath();ctx.stroke();
-    ctx.beginPath();ctx.arc(x,y,r*.33,0,Math.PI*2);ctx.stroke();
-    ctx.restore();
-  };
-  const trace=(pts,a)=>{
-    ctx.save();ctx.globalAlpha=a;ctx.strokeStyle='rgba(26,122,94,.28)';ctx.lineWidth=1.1;ctx.setLineDash([5,3]);
-    ctx.beginPath();ctx.moveTo(pts[0][0],pts[0][1]);
-    for(let i=1;i<pts.length;i++){
-      const pr=pts[i-1],cu=pts[i],mx=(pr[0]+cu[0])/2;
-      ctx.lineTo(mx,pr[1]);ctx.lineTo(mx,cu[1]);ctx.lineTo(cu[0],cu[1]);
-    }
-    ctx.stroke();ctx.setLineDash([]);
-    pts.forEach(([px,py])=>{ctx.globalAlpha=a*.75;ctx.fillStyle='rgba(26,122,94,.32)';ctx.beginPath();ctx.arc(px,py,3,0,Math.PI*2);ctx.fill();});
-    ctx.restore();
-  };
-  const draw=()=>{
-    ctx.clearRect(0,0,W,H);t+=.008;
-    gear(W*.09,H*.28,52,10,.68);gear(W*.87,H*.58,40,8,.52);gear(W*.58,H*.13,30,7,.4);
-    trace([[W*.28,H*.82],[W*.44,H*.72],[W*.62,H*.77],[W*.78,H*.67]],.55);
-    trace([[W*.04,H*.62],[W*.18,H*.52],[W*.35,H*.57]],.42);
-    ctx.strokeStyle='rgba(26,122,94,.18)';ctx.lineWidth=1.4;
-    ctx.beginPath();
-    for(let x=0;x<W;x+=2){const y=H*.87+Math.sin(x*.014+t)*16+Math.sin(x*.028+t*.65)*8;x===0?ctx.moveTo(x,y):ctx.lineTo(x,y);}
-    ctx.stroke();
-    ctx.beginPath();
-    for(let x=0;x<W;x+=2){const y=H*.92+Math.sin(x*.02+t*1.1)*11;x===0?ctx.moveTo(x,y):ctx.lineTo(x,y);}
-    ctx.stroke();
-    requestAnimationFrame(draw);
-  };
-  window.addEventListener('resize',resize);resize();draw();
+  const sec = document.getElementById('el-section');
+  if(!sec) return;
+  const el = document.createElement('div');
+  el.style.cssText = 'position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden';
+  el.innerHTML = `
+    <div style="position:absolute;width:550px;height:550px;border-radius:50%;
+      background:radial-gradient(circle,rgba(26,122,94,.4) 0%,transparent 70%);
+      top:-100px;left:-80px;filter:blur(80px);
+      animation:blobFloat 14s ease-in-out infinite alternate"></div>
+    <div style="position:absolute;width:380px;height:380px;border-radius:50%;
+      background:radial-gradient(circle,rgba(93,202,165,.2) 0%,transparent 70%);
+      bottom:5%;right:8%;filter:blur(65px);
+      animation:blobFloat 18s ease-in-out infinite alternate-reverse"></div>
+    <div style="position:absolute;width:250px;height:250px;border-radius:50%;
+      background:radial-gradient(circle,rgba(10,61,43,.5) 0%,transparent 70%);
+      top:50%;right:30%;filter:blur(45px);
+      animation:blobFloat 22s ease-in-out infinite alternate"></div>`;
+  sec.insertBefore(el, sec.firstChild);
 })();
+
+const blobStyle = document.createElement('style');
+blobStyle.textContent = `@keyframes blobFloat{
+  from{transform:translate(0,0) scale(1)}
+  to{transform:translate(30px,20px) scale(1.08)}
+}`;
+document.head.appendChild(blobStyle);
 </script>
-</body>
-</html>
