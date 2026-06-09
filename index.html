@@ -68,11 +68,11 @@ h1.hero em{font-style:italic;color:var(--xr)}
 .edu-logo-name{font-size:.82rem;font-weight:500;color:var(--text);margin:0}
 
 /* XR BG */
-#xr-section{background:linear-gradient(145deg,#0f1b3d 0%,#1a2f6b 40%,#0d1f4a 100%)}
+#xr-section{background:linear-gradient(180deg,#F7F6F2 0%,#c8d4ee 7%,#1a2f6b 20%,#1a2f6b 78%,#0d1f4a 100%)}
 #xr-section .st{color:#E8EDF7}
 #xr-section .sl{color:#8AABDF}
 /* ELECTRO BG */
-#el-section{background:linear-gradient(145deg,#052117 0%,#0a3d2b 45%,#051a12 100%)}
+#el-section{background:linear-gradient(180deg,#0d1f4a 0%,#083524 10%,#0a3d2b 22%,#0a3d2b 78%,#051a12 100%)}
 #el-section .st{color:#C8EDE3}
 #el-section .sl{color:#5DCAA5}
 
@@ -122,7 +122,7 @@ h1.hero em{font-style:italic;color:var(--xr)}
 .ptc{font-size:.7rem;color:var(--muted)}
 
 /* SKILLS */
-#skills-sec{background:var(--bg)}
+#skills-sec{background:#F7F6F2}
 .skw{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
 .skg h3{font-size:.78rem;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:.8rem}
 .skt{display:flex;flex-wrap:wrap;gap:.4rem}
@@ -162,7 +162,12 @@ footer a:hover{text-decoration:underline}
   .mbd{padding:1.2rem}.mb{padding:.5rem}
 }
 .ttech{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.6rem}
+.sep{width:100%;overflow:hidden;line-height:0;pointer-events:none}
+.sep svg{display:block;width:100%}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+.sw{transition:none}
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
 </style>
 </head>
 <body>
@@ -405,6 +410,12 @@ footer a:hover{text-decoration:underline}
 </div>
 
 <!-- SKILLS -->
+<div class="sep" aria-hidden="true">
+<svg viewBox="0 0 1440 90" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+  <rect width="1440" height="90" fill="#051a12"/>
+  <path d="M0,45 C240,10 480,80 720,38 C960,0 1200,68 1440,32 L1440,90 L0,90 Z" fill="#F7F6F2"/>
+</svg>
+</div>
 <div class="sw" id="skills-sec">
   <div class="si">
     <p class="sl">Toolkit</p>
@@ -635,4 +646,11 @@ blobStyle.textContent = `@keyframes blobFloat{
   to{transform:translate(30px,20px) scale(1.08)}
 }`;
 document.head.appendChild(blobStyle);
+
+/* Fade-in au scroll pour les timeline items */
+document.querySelectorAll('.ti').forEach(el => el.classList.add('fade-in'));
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+}, {threshold: 0.12});
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
 </script>
