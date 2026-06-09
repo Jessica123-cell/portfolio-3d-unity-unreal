@@ -3,585 +3,161 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jessica OUEDRAOGO — XR & Computer Vision Engineer</title>
+<title>Jessica OUEDRAOGO — XR & Electromechanical Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --bg: #F7F6F2;
-    --surface: #FFFFFF;
-    --text: #1C1C1A;
-    --muted: #7A7971;
-    --accent: #3B5EA6;
-    --accent-light: #E8EDF7;
-    --border: rgba(28,28,26,0.1);
-    --tag-bg: #EEF1F8;
-    --tag-text: #2A4580;
-    --radius: 14px;
-    --radius-sm: 8px;
-  }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-    font-size: 16px;
-  }
-
-  /* NAV */
-  nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: rgba(247,246,242,0.92);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-    padding: 0 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 60px;
-  }
-
-  .nav-logo {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.15rem;
-    color: var(--text);
-    text-decoration: none;
-    letter-spacing: -0.01em;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-  }
-
-  .nav-links a {
-    font-size: 0.875rem;
-    color: var(--muted);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .nav-links a:hover { color: var(--text); }
-
-  /* HERO */
-  .hero {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 7rem 2rem 5rem;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 3rem;
-    align-items: center;
-  }
-
-  .hero-eyebrow {
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1rem;
-  }
-
-  .hero h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(2.4rem, 5vw, 3.4rem);
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    color: var(--text);
-    margin-bottom: 1.25rem;
-  }
-
-  .hero h1 em {
-    font-style: italic;
-    color: var(--accent);
-  }
-
-  .hero-desc {
-    font-size: 1rem;
-    color: var(--muted);
-    max-width: 480px;
-    line-height: 1.7;
-    margin-bottom: 2rem;
-  }
-
-  .hero-actions {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.6rem 1.4rem;
-    border-radius: 100px;
-    font-size: 0.875rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: all 0.2s;
-    cursor: pointer;
-    border: none;
-  }
-
-  .btn-primary {
-    background: var(--accent);
-    color: white;
-  }
-
-  .btn-primary:hover { background: #2a4a8a; transform: translateY(-1px); }
-
-  .btn-outline {
-    background: transparent;
-    color: var(--text);
-    border: 1px solid var(--border);
-  }
-
-  .btn-outline:hover { background: var(--surface); transform: translateY(-1px); }
-
-  .hero-avatar {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    background: var(--accent-light);
-    border: 3px solid var(--surface);
-    box-shadow: 0 8px 32px rgba(59,94,166,0.15);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    flex-shrink: 0;
-  }
-
-  .hero-avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* SECTION */
-  section {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
-  }
-
-  .section-label {
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 0.5rem;
-  }
-
-  .section-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.9rem;
-    line-height: 1.15;
-    letter-spacing: -0.01em;
-    color: var(--text);
-    margin-bottom: 2.5rem;
-  }
-
-  /* CATEGORIES */
-  .categories {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    margin-bottom: 2.5rem;
-  }
-
-  .cat-btn {
-    padding: 0.4rem 1rem;
-    border-radius: 100px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    color: var(--muted);
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-
-  .cat-btn.active, .cat-btn:hover {
-    background: var(--accent);
-    color: white;
-    border-color: var(--accent);
-  }
-
-  /* PROJECT GRID */
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 1.25rem;
-  }
-
-  .project-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    overflow: hidden;
-    transition: transform 0.2s, box-shadow 0.2s;
-    cursor: pointer;
-  }
-
-  .project-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(28,28,26,0.1);
-  }
-
-  .project-thumb {
-    width: 100%;
-    aspect-ratio: 16/9;
-    background: var(--accent-light);
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .project-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s;
-  }
-
-  .project-card:hover .project-thumb img {
-    transform: scale(1.03);
-  }
-
-  .play-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(28,28,26,0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.2s;
-  }
-
-  .project-card:hover .play-overlay { opacity: 1; }
-
-  .play-btn {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .play-btn svg { width: 20px; height: 20px; fill: var(--accent); }
-
-  .thumb-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    color: var(--muted);
-    font-size: 0.8rem;
-  }
-
-  .thumb-placeholder svg { width: 32px; height: 32px; opacity: 0.4; }
-
-  .project-body {
-    padding: 1.1rem 1.25rem 1.25rem;
-  }
-
-  .project-cat {
-    display: inline-block;
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--tag-text);
-    background: var(--tag-bg);
-    padding: 0.25rem 0.6rem;
-    border-radius: 4px;
-    margin-bottom: 0.6rem;
-  }
-
-  .project-name {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.1rem;
-    line-height: 1.2;
-    color: var(--text);
-    margin-bottom: 0.5rem;
-  }
-
-  .project-desc {
-    font-size: 0.85rem;
-    color: var(--muted);
-    line-height: 1.55;
-  }
-
-  /* MODAL */
-  .modal-bg {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(10,10,8,0.65);
-    z-index: 200;
-    padding: 2rem;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-  }
-
-  .modal-bg.open { display: flex; }
-
-  .modal {
-    background: var(--surface);
-    border-radius: var(--radius);
-    max-width: 760px;
-    width: 100%;
-    max-height: 90vh;
-    overflow-y: auto;
-    position: relative;
-    animation: modalIn 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
-
-  @keyframes modalIn {
-    from { opacity: 0; transform: scale(0.93) translateY(12px); }
-    to   { opacity: 1; transform: scale(1) translateY(0); }
-  }
-
-  .modal-close {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: var(--bg);
-    border: 1px solid var(--border);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    transition: background 0.15s;
-  }
-
-  .modal-close:hover { background: #eee; }
-  .modal-close svg { width: 16px; height: 16px; }
-
-  .modal-media {
-    width: 100%;
-    aspect-ratio: 16/9;
-    background: #111;
-    border-radius: var(--radius) var(--radius) 0 0;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .modal-media img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-
-  .modal-content {
-    padding: 1.75rem 2rem 2rem;
-  }
-
-  .modal-meta {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
-  }
-
-  .modal-cat {
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--tag-text);
-    background: var(--tag-bg);
-    padding: 0.3rem 0.7rem;
-    border-radius: 4px;
-  }
-
-  .modal-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.7rem;
-    line-height: 1.15;
-    color: var(--text);
-    margin-bottom: 1rem;
-  }
-
-  .modal-desc {
-    font-size: 0.95rem;
-    color: var(--muted);
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-  }
-
-  /* ABOUT */
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-
-  .about-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1.5rem;
-  }
-
-  .about-card-icon {
-    width: 36px;
-    height: 36px;
-    background: var(--accent-light);
-    border-radius: var(--radius-sm);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 0.9rem;
-  }
-
-  .about-card-icon svg { width: 18px; height: 18px; stroke: var(--accent); }
-
-  .about-card h3 {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--text);
-    margin-bottom: 0.35rem;
-  }
-
-  .about-card p {
-    font-size: 0.85rem;
-    color: var(--muted);
-    line-height: 1.55;
-  }
-
-  /* EDU CARDS */
-  .edu-card { display: flex; flex-direction: column; gap: 0.75rem; }
-
-  .edu-header {
-    display: flex;
-    align-items: center;
-    gap: 0.9rem;
-  }
-
-  .edu-logo {
-    width: 52px;
-    height: 52px;
-    object-fit: contain;
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--border);
-    padding: 4px;
-    background: white;
-    flex-shrink: 0;
-  }
-
-  .edu-badge {
-    display: inline-block;
-    font-size: 0.68rem;
-    font-weight: 500;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    color: var(--tag-text);
-    background: var(--tag-bg);
-    padding: 0.2rem 0.55rem;
-    border-radius: 4px;
-    margin-bottom: 0.3rem;
-  }
-
-  .edu-header h3 { margin-bottom: 0; font-size: 0.95rem; }
-
-  /* SKILLS TAGS */
-  .skills-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 0.6rem;
-  }
-
-  .skill-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    padding: 0.3rem 0.75rem 0.3rem 0.5rem;
-    border-radius: 100px;
-    font-size: 0.78rem;
-    font-weight: 500;
-    background: var(--tag-bg);
-    color: var(--tag-text);
-    border: 1px solid rgba(59,94,166,0.15);
-  }
-
-  .skill-icon {
-    width: 15px;
-    height: 15px;
-    flex-shrink: 0;
-  }
-
-  .skill-tag-dark { background: #1C1C1A; color: #fff; border-color: transparent; }
-  .skill-tag-dark .skill-icon { color: #fff; }
-  .skill-tag-purple { background: #EEE8F8; color: #5B3FA8; border-color: rgba(91,63,168,0.2); }
-  .skill-tag-teal   { background: #E2F5EF; color: #0F6E56; border-color: rgba(15,110,86,0.2); }
-  .skill-tag-orange { background: #FEF0E3; color: #A0511A; border-color: rgba(160,81,26,0.2); }
-  .skill-tag-red    { background: #FDEAEA; color: #991F1F; border-color: rgba(153,31,31,0.2); }
-
-  /* FOOTER */
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 2.5rem 2rem;
-    max-width: 900px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 0.85rem;
-    color: var(--muted);
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  footer a { color: var(--accent); text-decoration: none; }
-  footer a:hover { text-decoration: underline; }
-
-  /* RESPONSIVE */
-  @media (max-width: 640px) {
-    .hero { grid-template-columns: 1fr; padding-top: 4rem; }
-    .hero-avatar { width: 100px; height: 100px; margin: 0 auto; order: -1; }
-    .about-grid { grid-template-columns: 1fr; }
-    nav { padding: 0 1rem; }
-    .nav-links { gap: 1.25rem; }
-    section { padding: 3rem 1.25rem; }
-    .modal-content { padding: 1.25rem; }
-    .modal-bg { padding: 0.75rem; }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    * { transition: none !important; animation: none !important; }
-  }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --bg:#F7F6F2;--surface:#fff;--text:#1C1C1A;--muted:#7A7971;
+  --border:rgba(28,28,26,.1);--radius:14px;--radius-sm:8px;
+  --xr:#3B5EA6;--xr-l:#E8EDF7;--xr-tt:#1E3A7A;--xr-tb:#DDE6F7;
+  --el:#1A7A5E;--el-l:#E2F5EF;--el-tt:#0D5040;--el-tb:#C8EDE3;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:16px;overflow-x:hidden}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:rgba(247,246,242,.93);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--text);text-decoration:none}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{font-size:.85rem;color:var(--muted);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+
+/* SECTION WRAP */
+.sw{position:relative;overflow:hidden}
+.si{position:relative;z-index:2;max-width:960px;margin:0 auto;padding:5rem 2rem}
+.bg-cv{position:absolute;inset:0;z-index:0;pointer-events:none}
+
+/* HERO */
+#hero{background:var(--bg)}
+.hg{display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center;padding-top:1.5rem}
+.ey{font-size:.72rem;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--xr);margin-bottom:.9rem}
+h1.hero{font-family:'DM Serif Display',serif;font-size:clamp(2.3rem,5vw,3.2rem);line-height:1.1;letter-spacing:-.02em;margin-bottom:1.2rem}
+h1.hero em{font-style:italic;color:var(--xr)}
+.hsub{font-size:.97rem;color:var(--muted);line-height:1.75;max-width:480px;margin-bottom:2rem}
+.ha{display:flex;gap:.7rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:.4rem;padding:.58rem 1.35rem;border-radius:100px;font-size:.875rem;font-weight:500;text-decoration:none;transition:all .2s;cursor:pointer;border:none;font-family:'DM Sans',sans-serif}
+.bp{background:var(--xr);color:#fff}.bp:hover{background:#2a4a8a;transform:translateY(-1px)}
+.bo{background:transparent;color:var(--text);border:1px solid var(--border)}.bo:hover{background:var(--surface);transform:translateY(-1px)}
+.av{width:148px;height:148px;border-radius:50%;border:3px solid var(--surface);box-shadow:0 8px 28px rgba(59,94,166,.15);overflow:hidden;flex-shrink:0}
+.av img{width:100%;height:100%;object-fit:cover}
+
+/* SECTION HEADER */
+.sl{font-size:.72rem;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem}
+.st{font-family:'DM Serif Display',serif;font-size:1.95rem;line-height:1.15;letter-spacing:-.015em;margin-bottom:2.5rem}
+
+/* ABOUT */
+#about{background:var(--bg)}
+.al{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
+.vw{position:relative;aspect-ratio:16/9;background:#0f0f1a;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border)}
+.vw iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
+.vpl{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;color:#999;font-size:.83rem;text-align:center;padding:1.75rem;background:linear-gradient(135deg,#0f0f1a,#1a1a2e)}
+.vpl svg{opacity:.45}
+.vpl strong{color:#ccc;font-size:.9rem}
+.vpl p{font-size:.78rem;line-height:1.55;color:#888;max-width:220px}
+.vpl code{font-size:.7rem;background:rgba(255,255,255,.08);padding:2px 5px;border-radius:3px;color:#aaa}
+.abt h3{font-family:'DM Serif Display',serif;font-size:1.35rem;margin-bottom:.7rem}
+.abt p{font-size:.9rem;color:var(--muted);line-height:1.75;margin-bottom:.85rem}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.9rem}
+.chip{padding:.3rem .8rem;border-radius:100px;font-size:.75rem;font-weight:500;background:var(--xr-l);color:var(--xr-tt);border:1px solid rgba(59,94,166,.15)}
+
+/* XR BG */
+#xr-section{background:#EBF0FB}
+#xr-section .st{color:#1E3A7A}
+#xr-section .sl{color:var(--xr)}
+/* ELECTRO BG */
+#el-section{background:#EBF5F1}
+#el-section .st{color:#0D5040}
+#el-section .sl{color:var(--el)}
+
+/* TIMELINE */
+.tl{position:relative;padding-left:2rem}
+.tl::before{content:'';position:absolute;left:.55rem;top:.5rem;bottom:.5rem;width:2px;border-radius:2px}
+#xr-section .tl::before{background:linear-gradient(180deg,var(--xr),rgba(59,94,166,.1))}
+#el-section .tl::before{background:linear-gradient(180deg,var(--el),rgba(26,122,94,.1))}
+.ti{position:relative;margin-bottom:2rem}
+.ti:last-child{margin-bottom:0}
+.td{position:absolute;left:-1.93rem;top:.55rem;width:14px;height:14px;border-radius:50%;border:3px solid var(--bg)}
+#xr-section .td{background:var(--xr);box-shadow:0 0 0 2px var(--xr)}
+#el-section .td{background:var(--el);box-shadow:0 0 0 2px var(--el)}
+.tc{background:rgba(255,255,255,.72);backdrop-filter:blur(10px);border-radius:var(--radius);padding:1.2rem 1.4rem;transition:transform .2s,box-shadow .2s}
+#xr-section .tc{border:1px solid rgba(59,94,166,.12)}
+#xr-section .tc:hover{transform:translateX(4px);box-shadow:0 6px 24px rgba(59,94,166,.1)}
+#el-section .tc{border:1px solid rgba(26,122,94,.12)}
+#el-section .tc:hover{transform:translateX(4px);box-shadow:0 6px 24px rgba(26,122,94,.1)}
+.tm{display:flex;align-items:center;gap:.55rem;margin-bottom:.45rem;flex-wrap:wrap}
+.tb{font-size:.67rem;font-weight:500;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .6rem;border-radius:4px}
+.ba{background:#F3EEF8;color:#5B3FA8}
+.bp2{background:#FEF0E3;color:#A0511A}
+.bx{background:var(--xr-tb);color:var(--xr-tt)}
+.be{background:var(--el-tb);color:var(--el-tt)}
+.bev{background:#FFF4DE;color:#8B5E00}
+.tdate{font-size:.73rem;color:var(--muted)}
+.ttitle{font-family:'DM Serif Display',serif;font-size:1.08rem;margin-bottom:.3rem}
+.torg{font-size:.8rem;color:var(--muted);font-style:italic;margin-bottom:.55rem}
+.tdesc{font-size:.84rem;color:var(--muted);line-height:1.65;margin-bottom:.65rem}
+.tprojs{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:.7rem;margin-top:.7rem}
+
+/* PROJ MINI CARDS */
+.pc{background:rgba(255,255,255,.9);border-radius:10px;overflow:hidden;cursor:pointer;border:1px solid rgba(0,0,0,.08);transition:transform .2s,box-shadow .2s}
+.pc:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(0,0,0,.1)}
+.pt{aspect-ratio:16/9;overflow:hidden;background:#1a1a2e;position:relative}
+.pt img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.pc:hover .pt img{transform:scale(1.05)}
+.pte{width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:#666;font-size:.73rem}
+.pov{position:absolute;inset:0;background:rgba(0,0,0,.25);opacity:0;transition:opacity .2s;display:flex;align-items:center;justify-content:center}
+.pc:hover .pov{opacity:1}
+.plc{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.95);display:flex;align-items:center;justify-content:center}
+.plc svg{width:15px;height:15px}
+#xr-section .plc svg{fill:var(--xr)}
+#el-section .plc svg{fill:var(--el)}
+.pi{padding:.65rem .8rem}
+.pn{font-size:.8rem;font-weight:500;color:var(--text);margin-bottom:.18rem;line-height:1.3}
+.ptc{font-size:.7rem;color:var(--muted)}
+
+/* SKILLS */
+#skills-sec{background:var(--bg)}
+.skw{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.skg h3{font-size:.78rem;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:.8rem}
+.skt{display:flex;flex-wrap:wrap;gap:.4rem}
+.sk{display:inline-flex;align-items:center;gap:.35rem;padding:.28rem .72rem .28rem .48rem;border-radius:100px;font-size:.77rem;font-weight:500}
+.sk img,.sk svg{width:14px;height:14px;flex-shrink:0}
+.skb{background:var(--xr-tb);color:var(--xr-tt);border:1px solid rgba(59,94,166,.2)}
+.skd{background:#1C1C1A;color:#fff}
+.skt2{background:var(--el-tb);color:var(--el-tt);border:1px solid rgba(26,122,94,.2)}
+.skp{background:#EEE8F8;color:#5B3FA8;border:1px solid rgba(91,63,168,.2)}
+.sko{background:#FEF0E3;color:#A0511A;border:1px solid rgba(160,81,26,.2)}
+.skg2{background:#EEECEA;color:#444;border:1px solid rgba(0,0,0,.1)}
+
+/* MODAL */
+.mb{display:none;position:fixed;inset:0;background:rgba(10,10,8,.65);z-index:300;padding:1.5rem;align-items:center;justify-content:center;backdrop-filter:blur(8px)}
+.mb.open{display:flex}
+.mo{background:var(--surface);border-radius:var(--radius);max-width:780px;width:100%;max-height:90vh;overflow-y:auto;position:relative;animation:min .25s cubic-bezier(.34,1.56,.64,1)}
+@keyframes min{from{opacity:0;transform:scale(.93) translateY(10px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.mc{position:absolute;top:.9rem;right:.9rem;width:33px;height:33px;border-radius:50%;background:var(--bg);border:1px solid var(--border);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10}
+.mc:hover{background:#e8e8e8}
+.mc svg{width:13px;height:13px}
+.mm{width:100%;aspect-ratio:16/9;background:#111;border-radius:var(--radius) var(--radius) 0 0;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.mm img{width:100%;height:100%;object-fit:contain}
+.mbd{padding:1.75rem 2rem 2rem}
+.mtag{display:inline-block;font-size:.68rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:.22rem .6rem;border-radius:4px;margin-bottom:.7rem}
+.mtitle{font-family:'DM Serif Display',serif;font-size:1.6rem;margin-bottom:.7rem}
+.mdesc{font-size:.92rem;color:var(--muted);line-height:1.75;margin-bottom:1.4rem}
+
+footer{border-top:1px solid var(--border);padding:2rem;max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;font-size:.83rem;color:var(--muted);flex-wrap:wrap;gap:.75rem}
+footer a{color:var(--xr);text-decoration:none}
+footer a:hover{text-decoration:underline}
+
+@media(max-width:700px){
+  .hg{grid-template-columns:1fr}.av{width:88px;height:88px;order:-1}
+  .al{grid-template-columns:1fr}.skw{grid-template-columns:1fr}
+  nav{padding:0 1rem}.nav-links{gap:1rem}
+  .si{padding:3.5rem 1.25rem}
+  .mbd{padding:1.2rem}.mb{padding:.5rem}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
@@ -589,266 +165,381 @@
 <nav>
   <a href="#" class="nav-logo">Jessica Ouedraogo</a>
   <ul class="nav-links">
-    <li><a href="#projects">Projects</a></li>
     <li><a href="#about">About</a></li>
+    <li><a href="#xr-section">XR</a></li>
+    <li><a href="#el-section">Electromechanics</a></li>
     <li><a href="https://www.linkedin.com/in/jessica-ouedraogo-2485332b0/" target="_blank" rel="noopener">LinkedIn</a></li>
     <li><a href="https://github.com/JessicaOUEDRAOGO" target="_blank" rel="noopener">GitHub</a></li>
   </ul>
 </nav>
 
-<div class="hero">
-  <div>
-    <p class="hero-eyebrow">XR &amp; Computer Vision Engineer</p>
-    <h1>Building <em>intelligent<br>immersive</em> systems</h1>
-    <p class="hero-desc">Electromechanical engineer specialising in real-time perception, augmented &amp; virtual reality, and AI-driven industrial applications.</p>
-    <div class="hero-actions">
-      <a href="#projects" class="btn btn-primary">View projects</a>
-      <a href="https://www.linkedin.com/in/jessica-ouedraogo-2485332b0/" target="_blank" rel="noopener" class="btn btn-outline">Get in touch</a>
+<!-- HERO -->
+<div class="sw" id="hero">
+  <canvas class="bg-cv" id="cv-hero"></canvas>
+  <div class="si">
+    <div class="hg">
+      <div>
+        <p class="ey">XR &amp; Electromechanical Engineer</p>
+        <h1 class="hero">Building <em>intelligent<br>immersive</em> systems</h1>
+        <p class="hsub">Electromechanical engineer at the intersection of computer vision, AR/VR, and real-time industrial AI. Designing applied systems that bridge the physical and digital worlds.</p>
+        <div class="ha">
+          <a href="#about" class="btn bp">Meet me</a>
+          <a href="#xr-section" class="btn bo">XR work</a>
+          <a href="#el-section" class="btn bo">Electromechanics</a>
+        </div>
+      </div>
+      <div class="av"><img src="https://avatars.githubusercontent.com/u/199961763?v=4" alt="Jessica OUEDRAOGO"></div>
     </div>
-  </div>
-  <div class="hero-avatar">
-    <img src="https://avatars.githubusercontent.com/u/199961763?v=4" alt="Jessica OUEDRAOGO" onerror="this.style.display='none'">
   </div>
 </div>
 
-<section id="projects">
-  <p class="section-label">Work</p>
-  <h2 class="section-title">Selected projects</h2>
-
-  <div class="categories">
-    <button class="cat-btn active" onclick="filterProjects('all', this)">All</button>
-    <button class="cat-btn" onclick="filterProjects('unity', this)">Unity / VR</button>
-    <button class="cat-btn" onclick="filterProjects('cv', this)">Computer Vision</button>
-    <button class="cat-btn" onclick="filterProjects('unreal', this)">Unreal Engine</button>
-  </div>
-
-  <div class="projects-grid" id="projects-grid"></div>
-</section>
-
-<section id="about">
-  <p class="section-label">Background</p>
-  <h2 class="section-title">About</h2>
-  <div class="about-grid">
-
-    <div class="about-card edu-card">
-      <div class="edu-header">
-        <img src="https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/About_Education/ENSAM.jpg" alt="ENSAM Chalon logo" class="edu-logo" onerror="this.style.display='none'">
-        <div>
-          <span class="edu-badge">Master's M2 · In progress</span>
-          <h3>Digital Engineering</h3>
+<!-- ABOUT -->
+<div class="sw" id="about">
+  <div class="si">
+    <p class="sl">About me</p>
+    <h2 class="st">Hello, I'm Jessica</h2>
+    <div class="al">
+      <div class="vw">
+        <!--
+          VIDEO INSTRUCTIONS:
+          1. Upload your video to Google Drive
+          2. Right-click → Share → "Anyone with the link"
+          3. Copy the link, extract the FILE_ID from: drive.google.com/file/d/FILE_ID/view
+          4. Replace PASTE_YOUR_GOOGLE_DRIVE_FILE_ID below with that ID
+          Then delete the vpl div and uncomment the iframe line.
+        -->
+        <iframe src="https://drive.google.com/file/d/1bZWRZGLAm4uB4fiuK_tSZFT2HaJRKEJP/preview" allowfullscreen></iframe>
+      </div>
+      <div class="abt">
+        <h3>Engineer &amp; builder of immersive systems</h3>
+        <p>I'm a double-degree engineer combining electromechanical foundations with cutting-edge XR and AI expertise. I design real-time intelligent systems that merge perception, interaction, and industrial logic.</p>
+        <p>Currently completing my Master's in Management of Interactive 3D Technologies at Arts et Métiers (ENSAM), Chalon-sur-Saône, while building on my State Engineering degree from ENSAM Meknes.</p>
+        <div class="chips">
+          <span class="chip">Computer Vision</span>
+          <span class="chip">Unity · Unreal Engine</span>
+          <span class="chip">AR / VR</span>
+          <span class="chip">Python · OpenCV</span>
+          <span class="chip">Industrial AI</span>
+          <span class="chip">Real-time systems</span>
         </div>
       </div>
-      <p>Arts et Métiers (ENSAM), Chalon-sur-Saône. Interactive 3D technologies, XR, and immersive system design.</p>
     </div>
+  </div>
+</div>
 
-    <div class="about-card edu-card">
-      <div class="edu-header">
-        <img src="https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/About_Education/logo_ensam.jpg" alt="ENSAM Meknes logo" class="edu-logo" onerror="this.style.display='none'">
-        <div>
-          <span class="edu-badge">State Engineering Degree</span>
-          <h3>Electromechanical Engineering</h3>
+<!-- XR -->
+<div class="sw" id="xr-section">
+  <canvas class="bg-cv" id="cv-xr"></canvas>
+  <div class="si">
+    <p class="sl">Extended Reality &amp; Computer Vision</p>
+    <h2 class="st">XR Timeline</h2>
+    <div class="tl">
+
+      <div class="ti">
+        <div class="td"></div>
+        <div class="tc">
+          <div class="tm"><span class="tb ba">Academic</span><span class="tdate">2024 – present</span></div>
+          <p class="ttitle">M2 — Management of Interactive 3D Technologies</p>
+          <p class="torg">Arts et Métiers (ENSAM) — Chalon-sur-Saône, France</p>
+          <p class="tdesc">Double degree specialising in XR, real-time 3D, computer vision, and immersive system design for industrial and training applications.</p>
+          <div class="tprojs" id="xp1"></div>
         </div>
       </div>
-      <p>Control systems &amp; industrial management. ENSAM Meknes, Morocco.</p>
-    </div>
 
-    <div class="about-card">
-      <div class="about-card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
-        </svg>
+      <div class="ti">
+        <div class="td"></div>
+        <div class="tc">
+          <div class="tm"><span class="tb bev">Event</span><span class="tdate">2025</span></div>
+          <p class="ttitle">XR Franco-German Hackathon</p>
+          <p class="torg">Paris, France</p>
+          <p class="tdesc">48h sprint — developed a VR awareness experience simulating Parkinson's motor impairments for empathy-driven design.</p>
+          <div class="tprojs" id="xp2"></div>
+        </div>
       </div>
-      <h3>Core skills</h3>
-      <div class="skills-grid">
-        <span class="skill-tag">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" class="skill-icon" alt="">Unity
-        </span>
-        <span class="skill-tag skill-tag-dark">
-          <svg class="skill-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M1.608 13.104l4.73 8.19a1.73 1.73 0 003.002 0l1.247-2.159-2.37-4.104a2.073 2.073 0 010-2.062L9.464 11H6.85l-5.242.001a1.73 1.73 0 000 1.502v.601zm10.784-1.042l-2.37 4.104 2.37 4.104a1.73 1.73 0 003.002 0l4.73-8.19v-.6a1.73 1.73 0 000-1.502l-5.242-.001h-2.49zm9.846-1.986l-4.73-8.19a1.73 1.73 0 00-3.002 0L13.26 4.044l2.37 4.104a2.073 2.073 0 010 2.062l1.247 1.79h2.613l5.242-.001a1.73 1.73 0 000-1.923zm-12.892-2.04L7.346 12l2 3.964 2-3.964-2-3.964zm0 0"/></svg>Unreal Engine
-        </span>
-        <span class="skill-tag">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="skill-icon" alt="">Python
-        </span>
-        <span class="skill-tag">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" class="skill-icon" alt="">OpenCV
-        </span>
-        <span class="skill-tag skill-tag-purple">
-          <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h3M19 12h3M12 2v3M12 19v3"/><rect x="7" y="7" width="10" height="10" rx="2"/><circle cx="12" cy="12" r="2"/></svg>Computer Vision
-        </span>
-        <span class="skill-tag skill-tag-teal">
-          <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>AR / VR
-        </span>
-        <span class="skill-tag skill-tag-orange">
-          <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>ArUco / Markers
-        </span>
-        <span class="skill-tag skill-tag-red">
-          <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-4M9 21H5a2 2 0 01-2-2v-4m0 0h18"/></svg>Real-time AI
-        </span>
-      </div>
-    </div>
 
-    <div class="about-card">
-      <div class="about-card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-        </svg>
+      <div class="ti">
+        <div class="td"></div>
+        <div class="tc">
+          <div class="tm"><span class="tb bx">Project</span><span class="tdate">2024</span></div>
+          <p class="ttitle">Computer Vision — Industrial &amp; Security Applications</p>
+          <p class="torg">ENSAM Chalon-sur-Saône</p>
+          <p class="tdesc">End-to-end AI pipelines for real-time detection and quality control: firearm detection with AR training overlay, and multi-station industrial defect detection.</p>
+          <div class="tprojs" id="xp3"></div>
+        </div>
       </div>
-      <h3>Location</h3>
-      <p>Based in France. Open to international opportunities in XR, industrial AI, and immersive simulation.</p>
-    </div>
 
+    </div>
   </div>
-</section>
+</div>
+
+<!-- ELECTRO -->
+<div class="sw" id="el-section">
+  <canvas class="bg-cv" id="cv-el"></canvas>
+  <div class="si">
+    <p class="sl">Electromechanical Engineering</p>
+    <h2 class="st">Control &amp; Industrial Systems</h2>
+    <div class="tl">
+
+      <div class="ti">
+        <div class="td"></div>
+        <div class="tc">
+          <div class="tm"><span class="tb ba">Academic</span><span class="tdate">2020 – 2024</span></div>
+          <p class="ttitle">State Engineering Degree — Electromechanical Engineering</p>
+          <p class="torg">École Nationale Supérieure d'Arts et Métiers (ENSAM) — Meknes, Morocco</p>
+          <p class="tdesc">Control systems, industrial management, and electromechanical design. Foundation in automation, mechatronics, and process engineering.</p>
+        </div>
+      </div>
+
+      <div class="ti">
+        <div class="td"></div>
+        <div class="tc">
+          <div class="tm"><span class="tb bp2">Professional</span><span class="tdate">Add your internship date</span></div>
+          <p class="ttitle">Industrial Internship / Project</p>
+          <p class="torg">Company / Organisation</p>
+          <p class="tdesc">Replace this entry with your actual professional experience — internships, projects, or lab work in electromechanics and control systems.</p>
+        </div>
+      </div>
+
+      <div class="ti">
+        <div class="td"></div>
+        <div class="tc">
+          <div class="tm"><span class="tb be">Project</span><span class="tdate">2024</span></div>
+          <p class="ttitle">3D Modelling &amp; Real-Time Visualisation</p>
+          <p class="torg">ENSAM / Personal work</p>
+          <p class="tdesc">Architectural and mechanical modelling in 3ds Max and Unreal Engine — UV mapping, materials, and real-time rendering workflows.</p>
+          <div class="tprojs" id="ep1"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<div class="sw" id="skills-sec">
+  <div class="si">
+    <p class="sl">Toolkit</p>
+    <h2 class="st">Skills</h2>
+    <div class="skw">
+      <div class="skg">
+        <h3>XR &amp; 3D</h3>
+        <div class="skt">
+          <span class="sk skb"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" alt="">Unity</span>
+          <span class="sk skd"><svg viewBox="0 0 24 24" fill="white"><path d="M1.608 13.104l4.73 8.19a1.73 1.73 0 003.002 0l1.247-2.159-2.37-4.104a2.073 2.073 0 010-2.062L9.464 11H6.85l-5.242.001a1.73 1.73 0 000 1.502v.601zm10.784-1.042l-2.37 4.104 2.37 4.104a1.73 1.73 0 003.002 0l4.73-8.19v-.6a1.73 1.73 0 000-1.502l-5.242-.001h-2.49zm9.846-1.986l-4.73-8.19a1.73 1.73 0 00-3.002 0L13.26 4.044l2.37 4.104a2.073 2.073 0 010 2.062l1.247 1.79h2.613l5.242-.001a1.73 1.73 0 000-1.923zm-12.892-2.04L7.346 12l2 3.964 2-3.964-2-3.964z"/></svg>Unreal Engine</span>
+          <span class="sk skb">AR / VR (XR Toolkit)</span>
+          <span class="sk skp">Netcode · Multiplayer</span>
+          <span class="sk skg2">3ds Max · Blender</span>
+        </div>
+      </div>
+      <div class="skg">
+        <h3>AI &amp; Computer Vision</h3>
+        <div class="skt">
+          <span class="sk skb"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="">Python</span>
+          <span class="sk skt2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="">OpenCV</span>
+          <span class="sk sko">YOLOv8 · Detection</span>
+          <span class="sk skp">ArUco Markers</span>
+          <span class="sk skt2">Real-time AI pipelines</span>
+        </div>
+      </div>
+      <div class="skg">
+        <h3>Electromechanics</h3>
+        <div class="skt">
+          <span class="sk skt2">Control Systems</span>
+          <span class="sk skt2">Industrial Management</span>
+          <span class="sk skt2">Automation</span>
+          <span class="sk skg2">Mechatronics</span>
+        </div>
+      </div>
+      <div class="skg">
+        <h3>Languages</h3>
+        <div class="skt">
+          <span class="sk skg2">French — Native</span>
+          <span class="sk skg2">English — Professional</span>
+          <span class="sk skg2">Arabic — Native</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <footer>
   <span>© 2025 Jessica OUEDRAOGO</span>
-  <span>
-    <a href="https://github.com/JessicaOUEDRAOGO" target="_blank" rel="noopener">GitHub</a> ·
-    <a href="https://www.linkedin.com/in/jessica-ouedraogo-2485332b0/" target="_blank" rel="noopener">LinkedIn</a>
-  </span>
+  <span><a href="https://github.com/JessicaOUEDRAOGO" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/jessica-ouedraogo-2485332b0/" target="_blank" rel="noopener">LinkedIn</a></span>
 </footer>
 
 <!-- MODAL -->
-<div class="modal-bg" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title-text" onclick="closeModal(event)">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModalBtn()" aria-label="Close">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-        <path d="M18 6L6 18M6 6l12 12"/>
-      </svg>
-    </button>
-    <div class="modal-media" id="modal-media"></div>
-    <div class="modal-content">
-      <div class="modal-meta">
-        <span class="modal-cat" id="modal-cat"></span>
-      </div>
-      <h2 class="modal-title" id="modal-title-text"></h2>
-      <p class="modal-desc" id="modal-desc"></p>
-      <a id="modal-link" href="#" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.8rem;">
-        View on GitHub →
-      </a>
+<div class="mb" id="modal" role="dialog" aria-modal="true" onclick="closeMBG(event)">
+  <div class="mo">
+    <button class="mc" onclick="closeMod()" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    <div class="mm" id="m-media"></div>
+    <div class="mbd">
+      <span class="mtag" id="m-tag"></span>
+      <h2 class="mtitle" id="m-title"></h2>
+      <p class="mdesc" id="m-desc"></p>
+      <a id="m-link" href="#" target="_blank" rel="noopener" class="btn bo" style="font-size:.82rem">View on GitHub →</a>
     </div>
   </div>
 </div>
 
 <script>
-const PROJECTS = [
-  {
-    id: "classroom",
-    cat: "unity",
-    catLabel: "Unity / VR",
-    name: "Classroom Collaborative",
-    shortDesc: "Multi-user VR classroom for real-time collaborative learning.",
-    desc: "Multi-user VR classroom designed to enable real-time collaboration and immersive learning experiences. Multiple participants share the same virtual space, interact with shared objects, and communicate as if physically present in a classroom.",
-    gif: "https://github.com/user-attachments/assets/26591270-33df-4bfa-af63-5d0ca5c7b92b",
-    link: "https://github.com/JessicaOUEDRAOGO/Portfolio/tree/main/unity/classRoomCollaborative"
-  },
-  {
-    id: "parkinson",
-    cat: "unity",
-    catLabel: "Unity / VR",
-    name: "Parkinson Awareness",
-    shortDesc: "VR experience simulating Parkinson's motor impairments.",
-    desc: "Immersive virtual reality experience raising awareness about Parkinson's disease by simulating motor impairments such as hand tremors and loss of precision. Through everyday tasks — drawing, picking up objects, precise manipulation — users experience the difficulties faced by people living with Parkinson's disease.",
-    gif: "https://github.com/user-attachments/assets/d3f08d9e-338a-41f6-a803-ce86bf8624b3",
-    link: "https://github.com/JessicaOUEDRAOGO/Portfolio/tree/main/unity/Parkinson"
-  },
-  {
-    id: "firearm",
-    cat: "cv",
-    catLabel: "Computer Vision",
-    name: "Real-Time Firearm Detection",
-    shortDesc: "AI security system with AR training for military education.",
-    desc: "End-to-end computer vision project integrating real-time firearm detection, augmented reality training, and intelligent video surveillance. Designed for military education and security monitoring applications, combining deep learning detection with an AR overlay interface.",
-    gif: "https://github.com/user-attachments/assets/8469fc1f-2440-4a14-ab0a-9b8e2f4aea3a",
-    link: "https://github.com/JessicaOUEDRAOGO/Portfolio/tree/main/Computer-Vision/Real-Time%20Firearm%20Detection"
-  },
-  {
-    id: "quality",
-    cat: "cv",
-    catLabel: "Computer Vision",
-    name: "Industrial Quality Control",
-    shortDesc: "Real-time defect detection across a multi-station assembly line.",
-    desc: "End-to-end industrial computer vision project for real-time quality control in a multi-station assembly line. Combines station recognition and progressive defect detection to improve production efficiency and reduce rework. Built for automated inspection pipelines in manufacturing environments.",
-    gif: "https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/Computer-Vision/AI-for-Industrial-Quality-Control/AI.gif",
-    link: "https://github.com/JessicaOUEDRAOGO/Portfolio/tree/main/Computer-Vision/AI-for-Industrial-Quality-Control"
-  },
-  {
-    id: "unreal",
-    cat: "unreal",
-    catLabel: "Unreal Engine",
-    name: "Virtual Environment Simulation",
-    shortDesc: "Immersive real-time virtual environment for interactive simulation.",
-    desc: "Immersive real-time virtual environment developed using Unreal Engine for interactive simulation purposes. Explores advanced rendering, physics interactions, and real-time environment responsiveness for training and industrial simulation use cases.",
-    gif: null,
-    link: "https://github.com/JessicaOUEDRAOGO/Portfolio"
-  }
-];
+const P={
+  classroom:{name:"Classroom Collaborative",tech:"Unity · Netcode · XR Toolkit",tag:"Unity / VR",tc:"bx",
+    desc:"Multi-user VR classroom enabling real-time collaboration. Participants share virtual space, interact with objects and communicate as if physically present.",
+    gif:"https://github.com/user-attachments/assets/26591270-33df-4bfa-af63-5d0ca5c7b92b",
+    link:"https://github.com/JessicaOUEDRAOGO/Portfolio/tree/main/unity/classRoomCollaborative"},
+  parkinson:{name:"Parkinson Awareness",tech:"Unity · VR · Blender",tag:"Unity / VR",tc:"bx",
+    desc:"Immersive VR experience simulating Parkinson's motor impairments — hand tremors and loss of precision — through everyday tasks like drawing and object manipulation.",
+    gif:"https://github.com/user-attachments/assets/d3f08d9e-338a-41f6-a803-ce86bf8624b3",
+    link:"https://github.com/JessicaOUEDRAOGO/Portfolio/tree/main/unity/Parkinson"},
+  firearm:{name:"Real-Time Firearm Detection",tech:"Python · YOLOv8 · OpenCV · AR",tag:"Computer Vision",tc:"bx",
+    desc:"End-to-end firearm detection with AR training overlay and intelligent video surveillance for military education and security monitoring.",
+    gif:"https://github.com/user-attachments/assets/8469fc1f-2440-4a14-ab0a-9b8e2f4aea3a",
+    link:"https://github.com/JessicaOUEDRAOGO/Portfolio/tree/main/Computer-Vision/Real-Time%20Firearm%20Detection"},
+  quality:{name:"Industrial Quality Control",tech:"Python · OpenCV · AI",tag:"Computer Vision",tc:"bx",
+    desc:"Real-time defect detection across a multi-station assembly line — station recognition and progressive quality control to reduce rework.",
+    gif:"https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/Computer-Vision/AI-for-Industrial-Quality-Control/AI.gif",
+    link:"https://github.com/JessicaOUEDRAOGO/Portfolio/tree/main/Computer-Vision/AI-for-Industrial-Quality-Control"},
+  unreal:{name:"House — Arch Visualisation",tech:"Unreal Engine · 3ds Max",tag:"Unreal Engine",tc:"be",
+    desc:"Real-time architectural visualisation of a residential house — lighting, materials, and interactive rendering in Unreal Engine.",
+    gif:null,link:"https://github.com/JessicaOUEDRAOGO/Portfolio/tree/main/unreal"}
+};
 
-function renderProjects(filter) {
-  const grid = document.getElementById('projects-grid');
-  const filtered = filter === 'all' ? PROJECTS : PROJECTS.filter(p => p.cat === filter);
-  grid.innerHTML = filtered.map(p => `
-    <div class="project-card" onclick="openModal('${p.id}')" tabindex="0" role="button" aria-label="View ${p.name}">
-      <div class="project-thumb">
-        ${p.gif
-          ? `<img src="${p.gif}" alt="${p.name} demo" loading="lazy">
-             <div class="play-overlay"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>`
-          : `<div class="thumb-placeholder">
-               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 10l4.553-2.069A1 1 0 0121 8.87v6.26a1 1 0 01-1.447.899L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
-               <span>Demo coming soon</span>
-             </div>`
-        }
-      </div>
-      <div class="project-body">
-        <span class="project-cat">${p.catLabel}</span>
-        <p class="project-name">${p.name}</p>
-        <p class="project-desc">${p.shortDesc}</p>
-      </div>
-    </div>
-  `).join('');
-
-  grid.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') card.click();
-    });
-  });
+function card(id){
+  const p=P[id];
+  return`<div class="pc" onclick="openMod('${id}')" tabindex="0" role="button" aria-label="${p.name}" onkeydown="if(event.key==='Enter'||event.key===' ')openMod('${id}')">
+    <div class="pt">${p.gif?`<img src="${p.gif}" alt="${p.name}" loading="lazy"><div class="pov"><div class="plc"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>`:`<div class="pte">Demo coming soon</div>`}</div>
+    <div class="pi"><p class="pn">${p.name}</p><p class="ptc">${p.tech}</p></div>
+  </div>`;
 }
+document.getElementById('xp1').innerHTML=card('classroom');
+document.getElementById('xp2').innerHTML=card('parkinson');
+document.getElementById('xp3').innerHTML=card('firearm')+card('quality');
+document.getElementById('ep1').innerHTML=card('unreal');
 
-function filterProjects(filter, btn) {
-  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  renderProjects(filter);
-}
-
-function openModal(id) {
-  const p = PROJECTS.find(x => x.id === id);
-  if (!p) return;
-  document.getElementById('modal-cat').textContent = p.catLabel;
-  document.getElementById('modal-title-text').textContent = p.name;
-  document.getElementById('modal-desc').textContent = p.desc;
-  document.getElementById('modal-link').href = p.link;
-  const media = document.getElementById('modal-media');
-  media.innerHTML = p.gif
-    ? `<img src="${p.gif}" alt="${p.name} demo">`
-    : `<div style="color:#888;font-size:0.9rem;padding:2rem;text-align:center;">Demo not yet available</div>`;
+function openMod(id){
+  const p=P[id];
+  document.getElementById('m-tag').textContent=p.tag;
+  document.getElementById('m-tag').className='mtag '+p.tc;
+  document.getElementById('m-title').textContent=p.name;
+  document.getElementById('m-desc').textContent=p.desc;
+  document.getElementById('m-link').href=p.link;
+  document.getElementById('m-media').innerHTML=p.gif?`<img src="${p.gif}" alt="${p.name}">`:`<div style="color:#888;font-size:.85rem;padding:2rem;text-align:center">Demo not yet available</div>`;
   document.getElementById('modal').classList.add('open');
-  document.body.style.overflow = 'hidden';
+  document.body.style.overflow='hidden';
 }
+function closeMBG(e){if(e.target===document.getElementById('modal'))closeMod();}
+function closeMod(){document.getElementById('modal').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMod()});
 
-function closeModal(e) {
-  if (e.target === document.getElementById('modal')) closeModalBtn();
-}
+/* ── BACKGROUND ANIMATIONS ── */
 
-function closeModalBtn() {
-  document.getElementById('modal').classList.remove('open');
-  document.body.style.overflow = '';
-}
+/* HERO — particle mesh */
+(function(){
+  const c=document.getElementById('cv-hero'),ctx=c.getContext('2d');
+  let W,H,pts=[];
+  const resize=()=>{W=c.width=c.parentElement.offsetWidth;H=c.height=c.parentElement.offsetHeight;pts=Array.from({length:55},()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.4+.4,vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.28,a:Math.random()}));};
+  const draw=()=>{
+    ctx.clearRect(0,0,W,H);
+    for(let i=0;i<pts.length;i++){
+      const p=pts[i];
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(59,94,166,${p.a*.22})`;ctx.fill();
+      p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
+      for(let j=i+1;j<pts.length;j++){
+        const q=pts[j],dx=p.x-q.x,dy=p.y-q.y,d=Math.sqrt(dx*dx+dy*dy);
+        if(d<110){ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.strokeStyle=`rgba(59,94,166,${(1-d/110)*.055})`;ctx.stroke();}
+      }
+    }
+    requestAnimationFrame(draw);
+  };
+  window.addEventListener('resize',resize);resize();draw();
+})();
 
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeModalBtn();
-});
+/* XR — VR headsets + camera reticles + scan line */
+(function(){
+  const c=document.getElementById('cv-xr'),ctx=c.getContext('2d');
+  let W,H,sc=0;
+  const resize=()=>{W=c.width=c.parentElement.offsetWidth;H=c.height=c.parentElement.offsetHeight;};
+  const reticle=(x,y,r,a)=>{
+    ctx.save();ctx.globalAlpha=a;ctx.strokeStyle='rgba(59,94,166,.55)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.stroke();
+    ctx.beginPath();ctx.arc(x,y,r*.32,0,Math.PI*2);ctx.stroke();
+    const t=7;
+    [[x-r,y,x-r+t,y],[x+r,y,x+r-t,y],[x,y-r,x,y-r+t],[x,y+r,x,y+r-t]].forEach(([ax,ay,bx,by])=>{ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(bx,by);ctx.stroke();});
+    ctx.restore();
+  };
+  const vr=(x,y,s,a)=>{
+    ctx.save();ctx.globalAlpha=a;ctx.strokeStyle='rgba(59,94,166,.18)';ctx.lineWidth=1.3;
+    ctx.beginPath();
+    ctx.moveTo(x-s*.68,y-s*.18);
+    ctx.bezierCurveTo(x-s*.7,y-s*.44,x-s*.33,y-s*.5,x,y-s*.5);
+    ctx.bezierCurveTo(x+s*.33,y-s*.5,x+s*.7,y-s*.44,x+s*.68,y-s*.18);
+    ctx.bezierCurveTo(x+s*.7,y+s*.14,x+s*.38,y+s*.28,x,y+s*.28);
+    ctx.bezierCurveTo(x-s*.38,y+s*.28,x-s*.7,y+s*.14,x-s*.68,y-s*.18);
+    ctx.closePath();ctx.stroke();
+    [x-s*.27,x+s*.27].forEach(lx=>{ctx.beginPath();ctx.arc(lx,y-s*.1,s*.21,0,Math.PI*2);ctx.stroke();});
+    ctx.restore();
+  };
+  const draw=()=>{
+    ctx.clearRect(0,0,W,H);
+    sc=(sc+.35)%H;
+    ctx.fillStyle='rgba(59,94,166,.035)';ctx.fillRect(0,sc,W,1.5);
+    ctx.strokeStyle='rgba(59,94,166,.038)';ctx.lineWidth=1;
+    for(let x=0;x<=W;x+=64){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();}
+    for(let y=0;y<=H;y+=64){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}
+    vr(W*.14,H*.35,88,.72);vr(W*.82,H*.62,68,.52);vr(W*.53,H*.12,52,.38);
+    reticle(W*.73,H*.22,27,.58);reticle(W*.27,H*.76,21,.46);reticle(W*.9,H*.46,17,.36);
+    requestAnimationFrame(draw);
+  };
+  window.addEventListener('resize',resize);resize();draw();
+})();
 
-renderProjects('all');
+/* ELECTRO — PCB traces + gears + sine control curves */
+(function(){
+  const c=document.getElementById('cv-el'),ctx=c.getContext('2d');
+  let W,H,t=0;
+  const resize=()=>{W=c.width=c.parentElement.offsetWidth;H=c.height=c.parentElement.offsetHeight;};
+  const gear=(x,y,r,n,a)=>{
+    ctx.save();ctx.globalAlpha=a;ctx.strokeStyle='rgba(26,122,94,.22)';ctx.lineWidth=1.1;
+    const s=Math.PI*2/n;ctx.beginPath();
+    for(let i=0;i<n;i++){
+      const ang=i*s,ro=r*1.28;
+      ctx.lineTo(Math.cos(ang)*r+x,Math.sin(ang)*r+y);
+      ctx.lineTo(Math.cos(ang)*ro+x,Math.sin(ang)*ro+y);
+      ctx.lineTo(Math.cos(ang+s*.55)*ro+x,Math.sin(ang+s*.55)*ro+y);
+      ctx.lineTo(Math.cos(ang+s*.55)*r+x,Math.sin(ang+s*.55)*r+y);
+    }
+    ctx.closePath();ctx.stroke();
+    ctx.beginPath();ctx.arc(x,y,r*.33,0,Math.PI*2);ctx.stroke();
+    ctx.restore();
+  };
+  const trace=(pts,a)=>{
+    ctx.save();ctx.globalAlpha=a;ctx.strokeStyle='rgba(26,122,94,.28)';ctx.lineWidth=1.1;ctx.setLineDash([5,3]);
+    ctx.beginPath();ctx.moveTo(pts[0][0],pts[0][1]);
+    for(let i=1;i<pts.length;i++){
+      const pr=pts[i-1],cu=pts[i],mx=(pr[0]+cu[0])/2;
+      ctx.lineTo(mx,pr[1]);ctx.lineTo(mx,cu[1]);ctx.lineTo(cu[0],cu[1]);
+    }
+    ctx.stroke();ctx.setLineDash([]);
+    pts.forEach(([px,py])=>{ctx.globalAlpha=a*.75;ctx.fillStyle='rgba(26,122,94,.32)';ctx.beginPath();ctx.arc(px,py,3,0,Math.PI*2);ctx.fill();});
+    ctx.restore();
+  };
+  const draw=()=>{
+    ctx.clearRect(0,0,W,H);t+=.008;
+    gear(W*.09,H*.28,52,10,.68);gear(W*.87,H*.58,40,8,.52);gear(W*.58,H*.13,30,7,.4);
+    trace([[W*.28,H*.82],[W*.44,H*.72],[W*.62,H*.77],[W*.78,H*.67]],.55);
+    trace([[W*.04,H*.62],[W*.18,H*.52],[W*.35,H*.57]],.42);
+    ctx.strokeStyle='rgba(26,122,94,.18)';ctx.lineWidth=1.4;
+    ctx.beginPath();
+    for(let x=0;x<W;x+=2){const y=H*.87+Math.sin(x*.014+t)*16+Math.sin(x*.028+t*.65)*8;x===0?ctx.moveTo(x,y):ctx.lineTo(x,y);}
+    ctx.stroke();
+    ctx.beginPath();
+    for(let x=0;x<W;x+=2){const y=H*.92+Math.sin(x*.02+t*1.1)*11;x===0?ctx.moveTo(x,y):ctx.lineTo(x,y);}
+    ctx.stroke();
+    requestAnimationFrame(draw);
+  };
+  window.addEventListener('resize',resize);resize();draw();
+})();
 </script>
 </body>
 </html>
