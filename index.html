@@ -223,11 +223,6 @@ footer a:hover{text-decoration:underline}
 
       <!-- VIDÉO HTML5 native -->
       <div class="vw">
-        <!--
-          Upload ta vidéo dans ton repo Portfolio à la racine ou dans un dossier /video/
-          Puis remplace le src ci-dessous par l'URL raw :
-          https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/video/intro.mp4
-        -->
         <iframe
           src="https://www.youtube.com/embed/zHc7DJUoYN8"
           title="Jessica OUEDRAOGO — Introduction"
@@ -343,7 +338,7 @@ footer a:hover{text-decoration:underline}
         <div class="tc">
           <div class="thook" data-i18n="hook-xr-t6">How do you give a unique identity to something that looks exactly like everything else?</div>
           <div class="tm"><span class="tb bp2" data-i18n="badge-internship">Internship</span><span class="tdate">Feb – Jul 2026</span></div>
-          <p class="ttitle" data-i18n="xr-t6-title">Sensory Engineering Intern — NappingAnalysisGUI</p>
+          <p class="ttitle" data-i18n="xr-t6-title">Sensory Engineering Intern — AR Interactive Table</p>
           <p class="torg" data-i18n="xr-t6-org">Centrale Lyon ENISE · Laboratoire LIRIS &amp; Institut Lyfe — Saint-Étienne, France</p>
           <p class="tdesc" data-i18n="xr-t6-desc">Developed and validated a projective AR interactive table prototype for culinary sensory analysis (napping method), tested in real conditions with participants on coffee samples. Simultaneous tracking of 9 visually identical cups with unique stable identities even during crossings. Real-time personalised projector overlays around each cup.</p>
           <div class="ttech"><span class="tb bx">Python</span><span class="tb bx">OpenCV</span><span class="tb bx">ArUco</span><span class="tb bx">MOSSE/KCF</span><span class="tb bx">PyQt6</span><span class="tb bx">NumPy</span></div>
@@ -415,7 +410,7 @@ footer a:hover{text-decoration:underline}
           <div class="tm"><span class="tb bp2" data-i18n="badge-internship">Internship</span><span class="tdate">Jul – Aug 2025</span></div>
           <p class="ttitle" data-i18n="el-t5-title">Automation Intern — Fountain Irrigation System</p>
           <p class="torg" data-i18n="el-t5-org">Structal Engineering — Fès-Meknès, Morocco</p>
-          <p class="tdesc" data-i18n="el-t5-desc">Automation of a fountain irrigation system using TIA Portal PLC programming.</p>
+          <p class="tdesc" data-i18n="el-t5-desc">Automation of a fountain irrigation system using Siemens PLC programming under TIA Portal.</p>
           <div class="ttech"><span class="tb be">TIA Portal</span></div>
         </div>
       </div>
@@ -540,12 +535,6 @@ const P={
     fbx:"https://github.com/JessicaOUEDRAOGO/Portfolio/tree/main/unreal/House",
     link:"https://github.com/JessicaOUEDRAOGO/Portfolio/tree/main/unreal/House"},
   intellcap:{name:"Connected Sport Vest — IoT",tech:"Unity · MQTT · Node-RED",tag:"IoT / Unity",tc:"be",
-    desc:"Smart connected vest for sports performance monitoring. End-to-end IoT pipeline: sensors embedded in the vest transmit data via MQTT broker through Node-RED, visualised in real-time in a Unity interface. Developed during internship at INTELLCAP, Rabat.",
-    gif:null,
-    slides:null,
-    video:"https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/unity/gilet/gilet.mp4",
-    link:"https://github.com/JessicaOUEDRAOGO/Portfolio"},
-  intellcap:{name:"Connected Sport Vest — IoT",tech:"Unity · MQTT · Node-RED",tag:"IoT / Unity",tc:"be",
     descKey:"proj-intellcap-desc",
     gif:"https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/unity/gilet/gilet-demo.gif",
     link:"https://github.com/JessicaOUEDRAOGO/Portfolio"},
@@ -571,7 +560,6 @@ document.getElementById('xp2').innerHTML=card('parkinson');
 document.getElementById('xp3').innerHTML=card('quality');
 document.getElementById('ep1').innerHTML=card('unreal');
 document.getElementById('ep-intellcap').innerHTML=card('intellcap');
-document.getElementById('ep-intellcap').innerHTML=card('intellcap');
 
 let slideIdx=0,slideData=null;
 function openMod(id){
@@ -595,9 +583,6 @@ function openMod(id){
     med.innerHTML=`<video controls style="width:100%;height:100%;object-fit:contain;background:#000" preload="metadata">
       <source src="${p.video}" type="video/mp4">
     </video>`;
-    slideData=null;
-  } else if(p.video){
-    med.innerHTML=`<video controls preload="metadata" style="width:100%;height:100%;object-fit:contain;background:#000"><source src="${p.video}" type="video/mp4"></video>`;
     slideData=null;
   } else {
     med.innerHTML=`<div style="color:#888;font-size:.85rem;padding:2rem;text-align:center">Demo not yet available</div>`;
@@ -734,7 +719,6 @@ initHooks();
 const _origApplyLang = applyLang;
 applyLang = function(lang) {
   _origApplyLang(lang);
-  // Réinitialiser les hooks après traduction
   document.querySelectorAll('.thook').forEach(el => {
     el.dataset.split = '';
     el.classList.remove('hook-visible');
@@ -794,7 +778,7 @@ const TRANSLATIONS = {
     "xr-t4-desc": "Real-time quality control across a multi-station assembly line \u2014 station recognition and progressive defect detection to reduce rework.",
     "xr-t5-title": "VR Safety Simulation \u2014 Construction Site",
     "xr-t5-org": "In partnership with GRDF \u2014 ENSAM Chalon-sur-Sa\u00f4ne",
-    "xr-t5-desc": "Immersive VR safety training developed in partnership with GRDF: the user is placed on an excavation site and experiences the consequences of non-compliant shoring — a trench collapse triggered by a passing vehicle. The simulation contrasts compliant and non-compliant scenarios.",
+    "xr-t5-desc": "Immersive VR safety training developed in partnership with GRDF: the user is placed on an excavation site and experiences the consequences of non-compliant shoring \u2014 a trench collapse triggered by a passing vehicle. The simulation contrasts compliant and non-compliant scenarios.",
     "xr-t6-title": "Sensory Engineering Intern \u2014 AR Interactive Table",
     "xr-t6-org": "Centrale Lyon ENISE \u00b7 Laboratoire LIRIS & Institut Lyfe \u2014 Saint-\u00c9tienne, France",
     "xr-t6-desc": "Developed and validated a projective AR interactive table for culinary sensory analysis (napping method). Simultaneous tracking of 9 visually identical cups. Real-time personalised projector overlays.",
@@ -812,7 +796,7 @@ const TRANSLATIONS = {
     "el-t4-desc": "Connected smart vest for sports performance monitoring. End-to-end IoT pipeline from sensor acquisition to real-time Unity visualisation.",
     "el-t5-title": "Automation Intern \u2014 Fountain Irrigation System",
     "el-t5-org": "Structal Engineering \u2014 F\u00e8s-Mekn\u00e8s, Morocco",
-    "el-t5-desc": "Automation of a fountain irrigation system using TIA Portal PLC programming.",
+    "el-t5-desc": "Automation of a fountain irrigation system using Siemens PLC programming under TIA Portal.",
     "el-t6-title": "3D Modelling & Real-Time Visualisation",
     "el-t6-org": "ENSAM / Personal work",
     "el-t6-desc": "Architectural and mechanical modelling in 3ds Max and Unreal Engine \u2014 UV mapping, materials, and real-time rendering workflows.",
@@ -821,7 +805,7 @@ const TRANSLATIONS = {
     "proj-firearm-desc": "End-to-end firearm detection with AR training overlay and intelligent video surveillance for military education and security monitoring.",
     "proj-quality-desc": "Real-time defect detection across a multi-station assembly line \u2014 station recognition and progressive quality control to reduce rework.",
     "proj-unreal-desc": "Real-time architectural visualisation of a residential house in Unreal Engine. Dynamic winter lighting, depth of field, particle snow, and detailed materials.",
-    "proj-grdf-desc": "Immersive VR safety training developed in partnership with GRDF: the user is placed on an excavation site and experiences the consequences of non-compliant shoring — a trench collapse triggered by a passing vehicle. The simulation contrasts compliant and non-compliant scenarios.",
+    "proj-grdf-desc": "Immersive VR safety training developed in partnership with GRDF: the user is placed on an excavation site and experiences the consequences of non-compliant shoring \u2014 a trench collapse triggered by a passing vehicle. The simulation contrasts compliant and non-compliant scenarios.",
     "proj-intellcap-desc": "Smart connected vest for sports performance monitoring. End-to-end IoT pipeline via MQTT and Node-RED, visualised in Unity.",
     "hook-xr-t1": "What if a degree could exist at the crossroads of 3D, AI, and human experience?",
     "hook-xr-t2": "What does it really feel like to live with Parkinson's?",
@@ -885,7 +869,7 @@ const TRANSLATIONS = {
     "xr-t4-desc": "Contr\u00f4le qualit\u00e9 temps r\u00e9el sur une ligne d'assemblage multi-postes \u2014 reconnaissance des postes et d\u00e9tection progressive des d\u00e9fauts pour r\u00e9duire les retouches.",
     "xr-t5-title": "Simulation VR S\u00e9curit\u00e9 \u2014 Chantier de Terrassement",
     "xr-t5-org": "En partenariat avec GRDF \u2014 ENSAM Chalon-sur-Sa\u00f4ne",
-    "xr-t5-desc": "Immersive VR safety training developed in partnership with GRDF: the user is placed on an excavation site and experiences the consequences of non-compliant shoring — a trench collapse triggered by a passing vehicle. The simulation contrasts compliant and non-compliant scenarios.",
+    "xr-t5-desc": "Formation VR immersive d\u00e9velopp\u00e9e en partenariat avec GRDF\u00a0: l'utilisateur est plac\u00e9 sur un chantier de terrassement et vit les cons\u00e9quences d'un boisage non conforme \u2014 effondrement de tranch\u00e9e d\u00e9clench\u00e9 par le passage d'un v\u00e9hicule. La simulation met en contraste les sc\u00e9narios conformes et non conformes.",
     "xr-t6-title": "Stagiaire G\u00e9nie Sensoriel \u2014 Table Interactive AR",
     "xr-t6-org": "Centrale Lyon ENISE \u00b7 Laboratoire LIRIS & Institut Lyfe \u2014 Saint-\u00c9tienne, France",
     "xr-t6-desc": "D\u00e9veloppement et validation d'une table interactive en r\u00e9alit\u00e9 augment\u00e9e projective pour l'analyse sensorielle culinaire (m\u00e9thode napping). Suivi simultan\u00e9 de 9 tasses identiques avec identit\u00e9s stables. Projections personnalis\u00e9es en temps r\u00e9el.",
@@ -903,7 +887,7 @@ const TRANSLATIONS = {
     "el-t4-desc": "Gilet connect\u00e9 pour le suivi des performances sportives. Pipeline IoT de bout en bout, de l'acquisition des capteurs \u00e0 la visualisation temps r\u00e9el dans Unity.",
     "el-t5-title": "Stagiaire Automatisation \u2014 Syst\u00e8me d'Arrosage de Fontaine",
     "el-t5-org": "Structal Engineering \u2014 F\u00e8s-Mekn\u00e8s, Maroc",
-    "el-t5-desc": "Automatisation d'un syst\u00e8me d'arrosage de fontaine par programmation d'automate TIA Portal.",
+    "el-t5-desc": "Automatisation d'un syst\u00e8me d'arrosage de fontaine par programmation d'automate Siemens sous TIA Portal.",
     "el-t6-title": "Mod\u00e9lisation 3D & Visualisation Temps R\u00e9el",
     "el-t6-org": "ENSAM / Travail personnel",
     "el-t6-desc": "Mod\u00e9lisation architecturale et m\u00e9canique sous 3ds Max et Unreal Engine \u2014 UV mapping, mat\u00e9riaux et workflows de rendu temps r\u00e9el.",
@@ -912,12 +896,12 @@ const TRANSLATIONS = {
     "proj-firearm-desc": "D\u00e9tection d'armes \u00e0 feu en temps r\u00e9el avec superposition AR pour la formation et surveillance intelligente pour l'\u00e9ducation militaire.",
     "proj-quality-desc": "D\u00e9tection de d\u00e9fauts en temps r\u00e9el sur une ligne d'assemblage multi-postes \u2014 contr\u00f4le qualit\u00e9 progressif pour r\u00e9duire les retouches.",
     "proj-unreal-desc": "Visualisation architecturale temps r\u00e9el sous Unreal Engine. \u00c9clairage hivernal dynamique, profondeur de champ, particules de neige et mat\u00e9riaux d\u00e9taill\u00e9s.",
-    "proj-grdf-desc": "Formation VR immersive développée en partenariat avec GRDF : l'utilisateur se retrouve sur un chantier de terrassement et vit les conséquences d'un boisage non conforme — effondrement de tranchée déclenché par le passage d'un véhicule. La simulation met en contraste les scénarios conformes et non conformes.",
+    "proj-grdf-desc": "Formation VR immersive d\u00e9velopp\u00e9e en partenariat avec GRDF\u00a0: l'utilisateur est plac\u00e9 sur un chantier de terrassement et vit les cons\u00e9quences d'un boisage non conforme \u2014 effondrement de tranch\u00e9e d\u00e9clench\u00e9 par le passage d'un v\u00e9hicule. La simulation met en contraste les sc\u00e9narios conformes et non conformes.",
     "proj-intellcap-desc": "Gilet connect\u00e9 intelligent pour le suivi des performances sportives. Pipeline IoT via MQTT et Node-RED, visualis\u00e9 en temps r\u00e9el dans Unity.",
     "hook-xr-t1": "Et si un dipl\u00f4me pouvait exister \u00e0 la crois\u00e9e de la 3D, de l'IA et de l'exp\u00e9rience humaine ?",
     "hook-xr-t2": "C'est quoi vraiment vivre avec Parkinson ?",
-    "hook-xr-t3": "Et si la distance n’était plus une excuse pour manquer un cours ?",
-    "hook-xr-t4": "Et si chaque défaut sur la ligne d'assemblage n'avait nulle part où se cacher ?",
+    "hook-xr-t3": "Et si la distance n'\u00e9tait plus une excuse pour manquer un cours ?",
+    "hook-xr-t4": "Et si chaque d\u00e9faut sur la ligne d'assemblage n'avait nulle part o\u00f9 se cacher ?",
     "hook-xr-t5": "On n'apprend jamais mieux qu'en \u00e9tant au fond du trou.",
     "hook-xr-t6": "Comment donner une identit\u00e9 unique \u00e0 quelque chose qui ressemble exactement \u00e0 tout le reste ?",
     "hook-el-t1": "Et si chaque machine pouvait \u00eatre aussi intelligente qu'elle est puissante ?",
@@ -938,7 +922,6 @@ function toggleLang() {
 function applyLang(lang) {
   const t = TRANSLATIONS[lang];
   const btn = document.getElementById('lang-btn');
-  // Tous les éléments avec data-i18n
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if(t[key] !== undefined) {
@@ -949,7 +932,6 @@ function applyLang(lang) {
       else el.textContent = t[key];
     }
   });
-  // Bouton langue
   btn.innerHTML = `<span style="font-size:.85rem">🌐</span> ${t['lang-btn']}`;
 }
-</script>
+</script></body></html>
