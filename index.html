@@ -31,7 +31,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(247,246,242,.93);backdrop-
 
 
 /* HERO */
-#hero{background:linear-gradient(180deg,#F7F6F2 0%,#F7F6F2 45%,#e8edf5 65%,#c8d8ee 82%,#8fa8d8 100%)}
+#hero{background:#F7F6F2}
 .hg{display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center;padding-top:1.5rem}
 .ey{font-size:.72rem;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--xr);margin-bottom:.9rem}
 h1.hero{font-family:'DM Serif Display',serif;font-size:clamp(2.3rem,5vw,3.2rem);line-height:1.1;letter-spacing:-.02em;margin-bottom:1.2rem}
@@ -41,7 +41,7 @@ h1.hero em{font-style:italic;color:var(--xr)}
 .btn{display:inline-flex;align-items:center;gap:.4rem;padding:.58rem 1.35rem;border-radius:100px;font-size:.875rem;font-weight:500;text-decoration:none;transition:all .2s;cursor:pointer;border:none;font-family:'DM Sans',sans-serif}
 .bp{background:var(--xr);color:#fff}.bp:hover{background:#2a4a8a;transform:translateY(-1px)}
 .bo{background:transparent;color:var(--text);border:1px solid var(--border)}.bo:hover{background:var(--surface);transform:translateY(-1px)}
-.av{width:200px;height:200px;border-radius:50%;border:3px solid var(--surface);box-shadow:0 8px 28px rgba(59,94,166,.15);overflow:hidden;flex-shrink:0}
+.av{width:200px;height:200px;border-radius:50%;border:none;box-shadow:0 8px 32px rgba(59,94,166,.22);overflow:hidden;flex-shrink:0}
 .av img{width:100%;height:100%;object-fit:cover}
 
 /* SECTION HEADER */
@@ -68,9 +68,9 @@ h1.hero em{font-style:italic;color:var(--xr)}
 .edu-logo-name{font-size:.82rem;font-weight:500;color:var(--text);margin:0}
 
 /* XR BG */
-#xr-section{background:linear-gradient(180deg,#8fa8d8 0%,#6688c0 12%,#3a5a9e 24%,#1a2f6b 38%,#1a2f6b 78%,#0d1f4a 100%)}
+#xr-section{background:linear-gradient(180deg,#8fa8d8 0%,#6688c0 10%,#3a5a9e 22%,#1a2f6b 36%,#1a2f6b 78%,#0d1f4a 100%)}
 #xr-section .st{color:#E8EDF7}
-#xr-section .sl{color:#8AABDF}
+#xr-section .sl{color:rgba(255,255,255,.75)}
 /* ELECTRO BG */
 #el-section{background:linear-gradient(180deg,#0d1f4a 0%,#083524 10%,#0a3d2b 22%,#0a3d2b 78%,#051a12 100%)}
 #el-section .st{color:#C8EDE3}
@@ -323,7 +323,6 @@ footer a:hover{text-decoration:underline}
       <div class="ti">
         <div class="td"></div>
         <div class="tc">
-          <div class="thook" data-i18n="hook-xr-t7">Et si l'espace pouvait exister avant même d'être construit ?</div>
           <div class="tm"><span class="tb bx" data-i18n="badge-academic-proj">Academic Project</span><span class="tdate">Dec 2025</span></div>
           <p class="ttitle" data-i18n="xr-t7-title">3D Modelling &amp; Real-Time Visualisation</p>
           <p class="torg" data-i18n="xr-t7-org">ENSAM / Personal work</p>
@@ -470,7 +469,7 @@ footer a:hover{text-decoration:underline}
         <h3 data-i18n="skills-auto">Automation &amp; Industrial</h3>
         <div class="skt">
           <span class="sk skt2">TIA Portal · PL7Pro</span>
-          <span class="sk skt2">Siemens S7-1200</span>
+          <span class="sk skt2">Siemens PLC</span>
           <span class="sk skt2">SCADA · Node-RED</span>
           <span class="sk skt2">OPC UA/DA · Modbus</span>
           <span class="sk skt2">MQTT · Profinet</span>
@@ -816,7 +815,6 @@ const TRANSLATIONS = {
     "hook-xr-t4": "What if the assembly line could detect its own mistakes?",
     "hook-xr-t5": "You never learn better than when you're at the bottom of the trench.",
     "hook-xr-t6": "How do you give a unique identity to something that looks exactly like everything else?",
-    "hook-xr-t7": "What if space could exist before it's even built?",
     "hook-el-t1": "What if every machine could think as well as it moves?",
     "hook-el-t2": "What if cooling only kicked in when it was actually needed?",
     "hook-el-t3": "Before you touch it, you already know how it works.",
@@ -908,7 +906,7 @@ const TRANSLATIONS = {
     "hook-xr-t4": "Et si chaque d\u00e9faut sur la ligne d'assemblage n'avait nulle part o\u00f9 se cacher ?",
     "hook-xr-t5": "On n'apprend jamais mieux qu'en \u00e9tant au fond du trou.",
     "hook-xr-t6": "Comment donner une identit\u00e9 unique \u00e0 quelque chose qui ressemble exactement \u00e0 tout le reste ?",
-    "hook-xr-t7": "Et si l'espace pouvait exister avant m\u00eame d'\u00eatre construit ?",
+    
     "hook-el-t1": "Et si chaque machine pouvait \u00eatre aussi intelligente qu'elle est puissante ?",
     "hook-el-t2": "Et si le refroidissement ne s'activait que quand c'est vraiment n\u00e9cessaire ?",
     "hook-el-t3": "Avant de la toucher, tu sais d\u00e9j\u00e0 comment \u00e7a marche.",
