@@ -110,7 +110,7 @@ const TRANSLATIONS = {
     "cta-explore-label": "Envie de voir concrètement ce que je construis ? Découvrez mes projets XR & vision par ordinateur, mes projets en électromécanique, ou retrouvez-moi sur LinkedIn.",
     "about-label": "\u00c0 propos de moi",
     "about-title": "Jessica OUEDRAOGO",
-    "about-p1": "Ing\u00e9nieure en double dipl\u00f4me, je combine des bases solides en \u00e9lectrom\u00e9canique \u00e0 une expertise de pointe en XR et IA. Je con\u00e7ois des syst\u00e8mes intelligents temps r\u00e9el qui fusionnent perception, interaction et logique industrielle.",
+    "about-p1": "Ing\u00e9nieure en double dipl\u00f4me, je combine des comp\u00e9tences en \u00e9lectrom\u00e9canique avec une exp\u00e9rience approfondie en XR et en IA. Mon travail porte sur la conception de syst\u00e8mes intelligents temps r\u00e9el int\u00e9grant perception, interaction et logique industrielle.",
     "about-quote": "Ce qui me motive : prendre un syst\u00e8me physique et lui donner une intelligence num\u00e9rique \u2014 qu'il collecte, communique et interagisse avec son environnement. C'est ce fil conducteur qui relie tous mes projets.",
     "edu-badge-1": "M2 \u00b7 En cours",
     "edu-name-1": "Arts et M\u00e9tiers \u2014 Chalon-sur-Sa\u00f4ne",
