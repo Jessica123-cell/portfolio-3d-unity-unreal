@@ -28,7 +28,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(247,246,242,.93);backdrop-
 #hero{background:#F7F6F2}
 .hg{display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center;padding-top:1.5rem}
 .ey{font-size:.72rem;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--xr);margin-bottom:.9rem}
-h1.hero{font-family:'DM Serif Display',serif;font-size:clamp(1.7rem,3.4vw,2.3rem);line-height:1.2;letter-spacing:-.02em;margin-bottom:1.2rem}
+h1.hero{font-family:'DM Serif Display',serif;font-size:clamp(1.4rem,2.8vw,1.9rem);line-height:1.2;letter-spacing:-.02em;margin-bottom:1.2rem}
 h1.hero em{font-style:italic;color:var(--xr)}
 .hsub{font-size:.97rem;color:var(--muted);line-height:1.75;max-width:480px;margin-bottom:2rem}
 .ha{display:flex;gap:.7rem;flex-wrap:wrap}
