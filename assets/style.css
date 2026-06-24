@@ -16,6 +16,8 @@ nav{position:sticky;top:0;z-index:200;background:rgba(247,246,242,.93);backdrop-
 .nav-links a:hover{color:var(--text)}
 .nav-links a[aria-current="page"]{color:var(--text);font-weight:500;border-bottom:2px solid var(--xr);padding-bottom:.2rem}
 .nav-links a[target="_blank"]::after{content:"↗";font-size:.75em;margin-left:.1rem;opacity:.55}
+.nav-links a.nav-icon{display:inline-flex;align-items:center}
+.nav-links a.nav-icon svg{width:18px;height:18px;fill:currentColor;display:block}
 
 /* SECTION WRAP */
 .sw{position:relative;overflow:hidden}
