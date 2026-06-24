@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jessica OUEDRAOGO — XR & Electromechanical Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Jessica Ouedraogo</a>
+  <ul class="nav-links">
+    <li><a href="index.html#about" data-i18n="nav-about" aria-current="page">About</a></li>
+    <li><a href="xr.html" data-i18n="nav-xr">XR</a></li>
+    <li><a href="electromecanique.html" data-i18n="nav-el">Electromechanics</a></li>
+    <li><a href="https://www.linkedin.com/in/jessica-ouedraogo-2485332b0/" target="_blank" rel="noopener">LinkedIn</a></li>
+    <li><a href="https://github.com/JessicaOUEDRAOGO" target="_blank" rel="noopener">GitHub</a></li>
+  </ul>
+  <button id="lang-btn" onclick="toggleLang()" style="
+    background:transparent;border:1px solid var(--border);border-radius:100px;
+    padding:.3rem .85rem;font-size:.78rem;font-weight:500;cursor:pointer;
+    color:var(--muted);font-family:'DM Sans',sans-serif;transition:all .2s;
+    display:flex;align-items:center;gap:.35rem;flex-shrink:0
+  " onmouseover="this.style.background='var(--surface)'" onmouseout="this.style.background='transparent'">
+    <span style="font-size:.85rem">🌐</span> FR
+  </button>
+</nav>
+
+<!-- HERO + ABOUT -->
+<div class="sw" id="hero">
+  <div class="si">
+
+    <!-- Ligne 1 : nom + titre -->
+    <div class="hg" style="margin-bottom:3rem">
+      <div>
+        <p class="ey" data-i18n="hero-eyebrow">XR &amp; Electromechanical Engineer</p>
+        <h1 class="hero" data-i18n="hero-h1">Building <em>intelligent<br>immersive</em> systems</h1>
+        <p class="hsub" data-i18n="hero-sub">Electromechanical engineer at the intersection of computer vision, AR/VR, and real-time industrial AI. Designing applied systems that bridge the physical and digital worlds.</p>
+        <div class="ha">
+          <a href="xr.html" class="btn bp" data-i18n="hero-btn-xr">XR work</a>
+          <a href="electromecanique.html" class="btn bg" data-i18n="hero-btn-el">Electromechanics</a>
+          <a href="https://www.linkedin.com/in/jessica-ouedraogo-2485332b0/" target="_blank" rel="noopener" class="btn bext">LinkedIn</a>
+        </div>
+      </div>
+      <div class="av"><img src="assets/images/avatar.jpg" alt="Jessica OUEDRAOGO" loading="eager" decoding="async"></div>
+    </div>
+
+    <!-- Ligne 2 : vidéo + bio + logos -->
+    <p class="sl" data-i18n="about-label" style="margin-bottom:.35rem">About me</p>
+    <h2 class="st" data-i18n="about-title" style="margin-bottom:1.5rem">Hello, I'm Jessica</h2>
+    <div class="al" id="about">
+
+      <!-- VIDÉO HTML5 native -->
+      <div class="vw">
+        <iframe
+          src="https://www.youtube.com/embed/zHc7DJUoYN8"
+          title="Jessica OUEDRAOGO — Introduction"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          style="position:absolute;inset:0;width:100%;height:100%;border:none;border-radius:var(--radius)">
+        </iframe>
+      </div>
+
+      <!-- BIO + LOGOS -->
+      <div class="abt">
+        <p style="font-size:.9rem;color:var(--muted);line-height:1.75;margin-bottom:.85rem" data-i18n="about-p1">I'm a double-degree engineer combining electromechanical foundations with cutting-edge XR and AI expertise. I design real-time intelligent systems that merge perception, interaction, and industrial logic.</p>
+        <p style="font-size:.88rem;color:var(--muted);line-height:1.7;font-style:italic;border-left:3px solid var(--xr);padding-left:.9rem;margin-bottom:1.5rem" data-i18n="about-quote">"What drives me: taking a physical system and giving it digital intelligence — so it collects, communicates, and interacts with its environment. That thread connects all my work, from industrial automation to augmented reality."</p>
+
+        <!-- LOGOS UNIVERSITÉS -->
+        <div class="edu-logos">
+          <div class="edu-logo-item">
+            <img src="https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/About_Education/ENSAM.jpg"
+                 alt="ENSAM Chalon-sur-Saône"
+                 onerror="this.style.display='none'">
+            <div>
+              <span class="edu-badge-sm" data-i18n="edu-badge-1">M2 · In progress</span>
+              <p class="edu-logo-name" data-i18n="edu-name-1">Arts et Métiers — Chalon-sur-Saône</p>
+            </div>
+          </div>
+          <div class="edu-logo-item">
+            <img src="https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/About_Education/logo_ensam.jpg"
+                 alt="ENSAM Meknes"
+                 onerror="this.style.display='none'">
+            <div>
+              <span class="edu-badge-sm" data-i18n="edu-badge-2">State Engineering Degree</span>
+              <p class="edu-logo-name" data-i18n="edu-name-2">ENSAM — Meknes, Morocco</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- SKILLS — Langues uniquement (placement le plus robuste : une seule source, pas de duplication) -->
+<div class="sw" id="skills-sec">
+  <div class="si">
+    <p class="sl" data-i18n="skills-label">Toolkit</p>
+    <div class="skw" style="grid-template-columns:1fr">
+      <div class="skg">
+        <h3 data-i18n="skills-lang">Languages</h3>
+        <div class="skt">
+          <span class="sk skg2" data-i18n="lang-french">French — Native (C1)</span>
+          <span class="sk skg2" data-i18n="lang-english">English — Professional (B2)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span data-i18n="footer-copy">© 2025 Jessica OUEDRAOGO</span>
+  <span><a href="https://github.com/JessicaOUEDRAOGO" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/jessica-ouedraogo-2485332b0/" target="_blank" rel="noopener">LinkedIn</a></span>
+</footer>
+
+<script src="assets/i18n.js"></script>
+<script src="assets/main.js"></script>
+</body></html>
